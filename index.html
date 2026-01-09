@@ -1,72 +1,105 @@
-<!DOCTYPE html>
+}<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <title></title>
-    <link rel="icon" type="" href="">
+    <link rel="icon" href="assets/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+    <div class="page-wrapper" id="pageWrapper">
     <header>
         <div class="lineas-decorativas"></div>
         <nav>
-            <ul>
-                <li><a href="#" class="logo"><img src="assets/logo.png" alt="Logo de Lila Design" width="120" height="120"><span class="logo-text">Lila Design</span></a></li>
-                <li><a href="index.html" class="boton active">Inicio</a></li>
-                <li><a href="1.html" class="boton">Productos</a></li>
-                <li><a href="3.html" class="boton">Contacto</a></li>
-            </ul>
+            <div class="nav-container">
+                <!-- Logo -->
+                <a href="#" class="logo">
+                    <img src="assets/logo.png" alt="Logo de Lila Design" width="120" height="120">
+                    <span class="logo-text">Lila Design</span>
+                </a>
+
+                <!-- Menú Desktop -->
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="boton active">Inicio</a></li>
+                    <li><a href="1.html" class="boton">Productos</a></li>
+                    <li><a href="3.html" class="boton">Contacto</a></li>
+                </ul>
+
+                <!-- Botón Hamburguesa -->
+                <button class="navbar-toggler" type="button" aria-label="Abrir menú" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
         </nav>
         <div class="lineas-decorativas"></div>
     </header>
+
+    <!-- Menú Móvil -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close-btn" aria-label="Cerrar menú">
+            <span class="close-line"></span>
+            <span class="close-line"></span>
+        </button>
+        
+        <ul class="mobile-menu-links">
+            <li><a href="index.html" class="boton active">Inicio</a></li>
+            <li><a href="1.html" class="boton">Productos</a></li>
+            <li><a href="3.html" class="boton">Contacto</a></li>
+        </ul>
+    </div>
+
+    <!-- Overlay -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+
+    <!-- Cartel Presentación -->
     <div class="cartel-presentacion">
         <h1>LILA DESIGN</h1>
         <p>Mi nombre es Aylen Sol Rodriguez y este es mi emprendimiento. Me encargo de la producción de: </p>
         <ul><li>ꜰᴏᴛᴏꜱ</li><li>ᴠɪɴɪʟᴏꜱ</li><li>ꜱᴛɪᴄᴋᴇʀꜱ</li><li>ꜰɪʟᴍɪɴᴀꜱ</li><li>ᴛᴀʀᴊᴇᴛᴀꜱ ᴘᴇʀꜱᴏɴᴀʟᴇꜱ</li><li>ʟʟᴀᴠᴇʀᴏꜱ</li><li>ᴄᴀʟᴇɴᴅᴀʀɪᴏꜱ</li><li>ʏ ᴍᴜᴄʜᴏ ᴍᴀꜱ!</li></ul> 
         <p>para ᴍᴇʀᴄᴇᴅᴇꜱ, ʟᴜᴊᴀɴ y ᴄᴀᴘɪᴛᴀʟ ꜰᴇᴅᴇʀᴀʟ</p>
     </div>
+
+    <!-- Carrusel -->
     <div class="carrusel">
         <div id="carouselExampleIndicators" class="carousel slide">
             <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="assets/1.jpeg" class="d-block w-100" alt="imagen carrusel 1">
-          </div>
-          <div class="carousel-item">
-            <img src="assets/2.jpeg" class="d-block w-100" alt="imagen carrusel 2">
-          </div>
-          <div class="carousel-item">
-            <img src="assets/3.jpeg" class="d-block w-100" alt="imagen carrusel 3">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/1.jpeg" class="d-block w-100" alt="imagen carrusel 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/2.jpeg" class="d-block w-100" alt="imagen carrusel 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/3.jpeg" class="d-block w-100" alt="imagen carrusel 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
+
+    <!-- Footer -->
     <footer>
         <div class="redes">
-            <ul>
-                <li><a href="https://www.instagram.com/liladesign__/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">    <img src="assets/instagram_logo.jpg" alt="Instagram de Lila Design" width="50" height="50"></a>
-            </ul>
-            <ul>
-                <li><a href="https://www.facebook.com/liladesign" aria-label="Facebook" target="_blank" rel="noopener noreferrer">    <img src="assets/facebook_logo.png" alt="Facebook de Lila Design" width="50" height="50"></a>
-            </ul>
-            <ul>
-                <li><a href="https://wa.me/5492324524738" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">    <img src="assets/whatsapp_logo.jpg" alt="WhatsApp de Lila Design" width="50" height="50"></a>
-            </ul>
+            <ul><li><a href="https://www.instagram.com/liladesign__/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><img src="assets/instagram_logo.jpg" alt="Instagram de Lila Design" width="45" height="45"></a></ul>
+            <ul><li><a href="https://www.facebook.com/liladesign" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><img src="assets/facebook_logo.png" alt="Facebook de Lila Design" width="45" height="45"></a></ul>
+            <ul><li><a href="https://wa.me/5492324524738" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><img src="assets/whatsapp_logo.jpg" alt="WhatsApp de Lila Design" width="45" height="45"></a></ul>
         </div>
         <div class="lineas-decorativas"></div>
         <div class="derechos">
@@ -74,6 +107,53 @@
             <p>realizado por Joaquin Hernan Rodriguez</p>
         </div>
     </footer>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Funcionalidad del menú hamburguesa
+        const togglerBtn = document.querySelector('.navbar-toggler');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        const closeBtn = document.querySelector('.mobile-close-btn');
+
+        function openMenu() {
+            mobileMenu.classList.add('show');
+            mobileOverlay.classList.add('show');
+            togglerBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('show');
+            mobileOverlay.classList.remove('show');
+            togglerBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        togglerBtn.addEventListener('click', function() {
+            if (mobileMenu.classList.contains('show')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        closeBtn.addEventListener('click', closeMenu);
+        mobileOverlay.addEventListener('click', closeMenu);
+
+        // Cerrar menú al hacer clic en un enlace
+        const mobileLinks = document.querySelectorAll('.mobile-menu-links a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Cerrar menú con tecla Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('show')) {
+                closeMenu();
+            }
+        });
+    </script>
 </body>
 </html>
