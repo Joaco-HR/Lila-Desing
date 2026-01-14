@@ -60,7 +60,7 @@ nav {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.logo:hover .logo-text {
+.logo:hover, .logo-text {
     transform: scale(1.05);
 }
 
@@ -253,8 +253,30 @@ nav {
 }
 footer {
     background: #202020;
+    color: #ffffff;
     padding: 2.5rem 1rem;
     margin-top: 4rem;
+}
+
+.footer-info{
+    list-style: none;
+    display: flex;
+    gap: 10rem;
+    justify-content: center;
+    padding-bottom: 3rem;
+}
+
+.footer-info h4{
+    text-decoration: underline;
+    color: #e0ac00;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.footer-nostros, .footer-links, .footer-contactos{
+    max-width: 300px;
 }
 
 .redes {
@@ -311,5 +333,8 @@ footer {
         max-height: 150px;
         padding-bottom: 2rem;
     }
-   
+   .footer-info{
+        display: list-item;
+        padding-bottom: 2rem;
+   }
 }
