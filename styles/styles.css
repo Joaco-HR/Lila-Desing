@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    padding-top: 8rem;
+    padding-top: 10rem;
 }
 
 header {
@@ -57,10 +57,10 @@ nav {
     font-weight: 700;
     letter-spacing: 1px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-.logo:hover, .logo-text {
+.logo:hover .logo-text {
     transform: scale(1.05);
 }
 
@@ -199,6 +199,7 @@ nav {
 .carousel-item img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     object-position: center;
 }
 
@@ -208,7 +209,11 @@ nav {
     padding: 0 2rem;
 }
 
-.cartel-contenido{
+.cartel-presentacion > img {
+    padding-bottom: 2rem;
+}
+
+.cartel-contenido {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -216,67 +221,274 @@ nav {
     flex-wrap: wrap;
 }
 
-.cartel-foto{
-    position: relative;
-    background: rgb(255, 255, 255); 
+.cartel-foto {
+    background: #ffffff;
     padding: 15px 15px 50px 15px;
     border-radius: 3px;
     border: 1px solid #e0e0e0;
     box-shadow: -8px 8px 15px rgba(0, 0, 0, 0.4);
-    flex-shrink: 0;
+    transition: 0.5s;
 }
 
 .cartel-foto img {
-    object-fit: cover;
     display: block;
+    object-fit: cover;
 }
 
-.cartel-texto{
+.cartel-foto:hover {
+    transform: rotate(-5deg);
+}
+
+.cartel-texto {
     max-width: 700px;
     text-align: left;
 }
 
 .cartel-texto p {
     font-family: "Quintessential", serif;
-    padding-top: 2rem;
     font-weight: 700;
     font-size: 1.1rem;
     letter-spacing: 1px;
 }
 
-.cartel-texto ul{
-    color: #7cc4b0;
+.cartel-texto ul {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-items: center;
+}
+
+.cartel-texto ul li a {
+    display: inline-block;
+    width: 220px;
+    text-decoration: none;
+    background: #00c8b7f3;
+    color: #ffffff;
+    padding: 1rem 1.5rem;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 30%, 100% 70%, 90% 100%, 10% 100%, 0% 70%, 0% 30%);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.cartel-texto ul li a:hover {
+    background: #00d9ff;
+    color: #000000;
+    transform: translateY(-5px) scale(1.05);
+}
+
+.cartel-texto ul li.mucho-mas-li a {
+    background-color: #ffffff;
+    color: #00c8b7f3;
+    border: 2px dashed #00c8b7f3;
+    clip-path: none;
+    border-radius: 10px;
+}
+
+.catalogo h1{
+    color: #00c8b7f3;
+    font-family: "Birthstone", cursive;
+    font-weight: 400;
+    font-size: 8rem;
+    text-align: center;
+}
+
+.catalogo p{
+    font-family: "Quintessential", serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.contacto-wrapper {
+    min-height: calc(100vh - 300px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.contacto-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contacto-header h1 {
+    color: #1cffecf3;
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 1rem;
+}
+
+.contacto-header p {
+    font-family: "Quintessential", serif;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.form-contacto {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.form-row-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-field label {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    padding: 0.9rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: #1cffecf3;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(28, 255, 236, 0.1);
+}
+
+.form-field textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-field select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.btn-form {
+    padding: 1rem 3rem;
+    border: 2px solid transparent;
+    border-radius: 50px;
     font-weight: 700;
     font-size: 1.1rem;
     letter-spacing: 1px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
 }
+
+.btn-enviar-form {
+    background: #00c8b7f3;
+    color: #ffffff;
+}
+
+.btn-enviar-form:hover {
+    background: #00d9ff;
+    color: #000000;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 200, 183, 0.4);
+}
+
+.btn-limpiar {
+    background: transparent;
+    color: #333;
+    border-color: #333;
+}
+
+.btn-limpiar:hover {
+    background: #333;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
 footer {
     background: #202020;
     color: #ffffff;
     padding: 2.5rem 1rem;
     margin-top: 4rem;
+    bottom: 0;
 }
 
-.footer-info{
-    list-style: none;
+.footer-info {
     display: flex;
     gap: 10rem;
     justify-content: center;
     padding-bottom: 3rem;
 }
 
-.footer-info h4{
+.footer-info h4 {
     text-decoration: underline;
     color: #e0ac00;
     font-weight: 700;
     font-size: 1.1rem;
     letter-spacing: 1px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-.footer-nostros, .footer-links, .footer-contactos{
+.footer-nostros,
+.footer-links,
+.footer-contactos {
     max-width: 300px;
+}
+
+.footer-links ul,
+.footer-contactos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li a {
+    display: inline-block;
+    text-decoration: none;  
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #ffa844;
+    transform: translateX(15px);
 }
 
 .redes {
@@ -300,7 +512,7 @@ footer {
     border-radius: 50%;
     border: 3px solid #ffffff;
     background: #2b2b2b;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .redes img:hover {
@@ -311,30 +523,78 @@ footer {
 
 .derechos {
     text-align: center;
-    color: #ffffff;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
+@media (max-width: 971px){
     .nav-menu {
         display: none;
     }
+
     .navbar-toggler {
         display: flex;
     }
     .logo-text {
         font-size: 1.4rem;
     }
+}
+    
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .navbar-toggler {
+        display: flex;
+    }
+
+    .logo-text {
+        font-size: 1.4rem;
+    }
+
     .carousel-item {
         height: 400px;
     }
+
     .cartel-presentacion > img {
         max-width: 350px;
         max-height: 150px;
-        padding-bottom: 2rem;
     }
-   .footer-info{
+
+    .cartel-texto ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cartel-texto ul li.mucho-mas-li {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .cartel-texto p {
+        text-align: center;
+    }
+
+       .contacto-titulo {
+        font-size: 1.8rem;
+    }
+
+    .contacto-descripcion {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .formulario {
+        padding: 1.5rem;
+    }
+
+    .btn-enviar {
+        font-size: 1rem;
+        padding: 0.9rem 1.5rem;
+    }
+
+    .footer-info {
         display: list-item;
         padding-bottom: 2rem;
-   }
+    }
 }
