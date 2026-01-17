@@ -117,8 +117,8 @@ nav {
 
 .nav-menu ul li a:hover {
     background: #f0f0f0;
-    border-left-color: #1cffecf3;
-    color: #1cffecf3;
+    border-left-color: #00c8b7f3;
+    color: #00c8b7f3;
 }
 
 .nav-menu ul ul {
@@ -142,7 +142,7 @@ nav {
     padding: 0.8rem 1.5rem;
     border-radius: 50px;
     text-decoration: none;
-    color: #1cffecf3;
+    color: #00c8b7f3;
     font-weight: 700;
     font-size: 1.1rem;
     letter-spacing: 1px;
@@ -257,7 +257,7 @@ nav {
     left: 50%;
     width: 20px;
     height: 2px;
-    background: #1cffecf3;
+    background: #00c8b7f3;
 }
 
 .close-line:first-child {
@@ -287,11 +287,11 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    color: #1cffecf3;
+    color: #00c8b7f3;
     text-decoration: none;
     font-weight: 700;
     border-radius: 8px;
-    transition: background 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .mobile-menu-links > li > a:hover {
@@ -346,8 +346,8 @@ nav {
 
 .mobile-menu-links ul > li > a:hover {
     background: #e0e0e0;
-    border-left-color: #1cffecf3;
-    color: #1cffecf3;
+    border-left-color: #00c8b7f3;
+    color: #00c8b7f3;
 }
 
 /* Flecha para items con sub-submenú */
@@ -392,7 +392,7 @@ nav {
 }
 
 .mobile-menu-links::-webkit-scrollbar-thumb {
-    background: #1cffecf3;
+    background: #00c8b7f3;
     border-radius: 3px;
 }
 
