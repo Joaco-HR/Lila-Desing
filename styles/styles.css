@@ -1,6 +1,8 @@
 body {
-    margin: 0;
     padding-top: 10rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 header {
@@ -19,7 +21,7 @@ header {
 }
 
 nav {
-    max-width: 1200px;
+    max-width: 1150px;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -28,7 +30,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
 }
 
 .logo {
@@ -36,15 +37,12 @@ nav {
     align-items: center;
     gap: 1.5rem;
     text-decoration: none;
+    transition: transform 0.3s;
 }
 
 .logo img {
-    width: 90px;
-    height: 90px;
     border-radius: 50%;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
 }
 
 .logo:hover img {
@@ -53,11 +51,8 @@ nav {
 
 .logo-text {
     font-size: 2rem;
-    color: #1cffecf3;
     font-weight: 700;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
+    color: #1cffecf3;
 }
 
 .logo:hover, .logo-text {
@@ -67,35 +62,43 @@ nav {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 1rem;
+    gap: 4rem;
     margin: 0;
     padding: 0;
 }
 
-.nav-menu > li {
+.nav-menu li {
     position: relative;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #00c8b7f3;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    color: #000000;
 }
 
 .nav-menu ul {
     position: absolute;
-    top: 100%;
-    left: 0;
-    background: #ffffff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background: #ececec;
     list-style: none;
-    padding: 0.3rem 0;
-    margin: 0;
+    padding: 0;
     min-width: 220px;
-    opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
     z-index: 1000;
     border-radius: 8px;
+    top: 150%;
 }
 
 .nav-menu > li:hover > ul {
-    opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
@@ -106,17 +109,15 @@ nav {
 
 .nav-menu ul li a {
     display: block;
-    padding: 0.8rem 1.5rem;
+    padding: 0.7rem;
     color: #333;
     text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     transition: all 0.3s ease;
     border-left: 3px solid transparent;
 }
 
 .nav-menu ul li a:hover {
-    background: #f0f0f0;
     border-left-color: #00c8b7f3;
     color: #00c8b7f3;
 }
@@ -124,104 +125,17 @@ nav {
 .nav-menu ul ul {
     top: 0;
     left: 100%;
-    margin-left: 0.25rem;
+    margin-left: 0.2rem;
 }
 
 .nav-menu ul li:hover > ul {
-    left: 100%;
-    right: auto;
-}
-
-.nav-menu ul li:hover > ul {
-    opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
 
-.boton {
-    padding: 0.8rem 1.5rem;
-    border-radius: 50px;
-    text-decoration: none;
-    color: #00c8b7f3;
-    font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-}
-
-.boton:hover,
-.boton.active {
-    color: #000000;
-}
-
-.nav-menu > li > a::after {
-    content: '';
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: 0.4rem;
-    vertical-align: middle;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 4px solid currentColor;
-    transition: transform 0.3s ease;
-}
-
-.nav-menu > li > a:only-child::after {
-    display: none;
-}
-
-.nav-menu > li:hover > a::after {
-    transform: rotate(180deg);
-}
-
-.nav-menu ul li a::after {
-    content: '';
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: 0.4rem;
-    margin-top: 0.3rem;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-    border-left: 4px solid currentColor;
-}
-
-.nav-menu ul li:not(:has(ul)) a::after {
-    display: none;
-}
-
 .navbar-toggler {
     display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6px;
-}
-
-.hamburger-line {
-    width: 25px;
-    height: 3px;
-    background: #1cffecf3;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-.navbar-toggler[aria-expanded="true"] .hamburger-line:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
-}
-
-.navbar-toggler[aria-expanded="true"] .hamburger-line:nth-child(2) {
-    opacity: 0;
-}
-
-.navbar-toggler[aria-expanded="true"] .hamburger-line:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+    fill: #00c8b7f3;
 }
 
 .mobile-menu {
@@ -229,7 +143,7 @@ nav {
     top: 0;
     right: -300px;
     width: 300px;
-    height: 100vh;
+    height: 100%;
     background: #ffffff;
     padding: 2rem 1rem;
     transition: right 0.3s ease;
@@ -244,102 +158,53 @@ nav {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: none;
     border: none;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
+    color: #00c8b7f3;
 }
 
-.close-line {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 20px;
-    height: 2px;
-    background: #00c8b7f3;
-}
-
-.close-line:first-child {
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.close-line:last-child {
-    transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-/* Estilos mejorados para el menú móvil con submenús expandibles */
 .mobile-menu-links {
-    list-style: none;
     padding: 0;
-    margin-top: 3rem;
-    max-height: calc(100vh - 5rem);
-    overflow-y: auto;
-}
-
-/* Estilos para los items principales del menú móvil */
-.mobile-menu-links > li {
-    border-bottom: 1px solid #e0e0e0;
+    margin-top: 1rem;
+    max-height: calc(100vh - 5rem);/*Scrool*/
+    overflow-y: auto;/*Scrool*/
 }
 
 .mobile-menu-links > li > a {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 1rem;
     color: #00c8b7f3;
+    text-shadow: none;
     text-decoration: none;
     font-weight: 700;
-    border-radius: 8px;
     transition: 0.3s ease;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
 }
 
 .mobile-menu-links > li > a:hover {
-    background: #f5f5f5;
+    background: #e0e0e0;
+    border-left-color: #00c8b7f3;
+    color: #00c8b7f3;
 }
 
-/* Flecha indicadora de submenú */
-.mobile-menu-links > li > a::after {
-    content: '›';
-    font-size: 1.5rem;
-    transition: transform 0.3s ease;
-}
-
-/* Rotar flecha cuando está activo */
-.mobile-menu-links > li.active > a::after {
-    transform: rotate(90deg);
-}
-
-/* Items sin submenú no tienen flecha */
-.mobile-menu-links > li:not(:has(ul)) > a::after {
-    display: none;
-}
-
-/* Ocultar submenús por defecto */
 .mobile-menu-links ul {
     display: none;
-    list-style: none;
+    text-shadow: none;
     padding-left: 0;
-    background: #f5f5f5;
     margin: 0;
-    border-radius: 0 0 8px 8px;
 }
 
-/* Mostrar submenús cuando están activos */
 .mobile-menu-links li.active > ul {
     display: block;
 }
 
-/* Estilos para items de primer nivel de submenú */
 .mobile-menu-links ul > li > a {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0.8rem 1.5rem;
+    padding: 1.5rem;
     color: #333;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     border-left: 3px solid transparent;
     transition: all 0.3s ease;
 }
@@ -350,54 +215,21 @@ nav {
     color: #00c8b7f3;
 }
 
-/* Flecha para items con sub-submenú */
-.mobile-menu-links ul > li > a::after {
-    content: '›';
-    font-size: 1.2rem;
-    transition: transform 0.3s ease;
-}
-
-.mobile-menu-links ul > li.active > a::after {
-    transform: rotate(90deg);
-}
-
-/* Items sin submenú no tienen flecha */
-.mobile-menu-links ul > li:not(:has(ul)) > a::after {
-    display: none;
-}
-
-/* Estilos para sub-submenús */
-.mobile-menu-links ul ul {
-    background: #ebebeb;
-    padding-left: 0;
-}
-
 .mobile-menu-links ul ul > li > a {
     padding: 0.7rem 2rem;
-    font-weight: 500;
     font-size: 0.9rem;
 }
 
-.mobile-menu-links ul ul > li > a::after {
-    display: none;
-}
-
-/* Mejorar scrollbar para el menú móvil */
 .mobile-menu-links::-webkit-scrollbar {
     width: 6px;
 }
 
-.mobile-menu-links::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
 .mobile-menu-links::-webkit-scrollbar-thumb {
-    background: #00c8b7f3;
-    border-radius: 3px;
+    background: #a6a6a6f3;
 }
 
 .mobile-menu-links::-webkit-scrollbar-thumb:hover {
-    background: #00c8b7f3;
+    background: #a6a6a6f3;
 }
 
 .mobile-menu-overlay {
