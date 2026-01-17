@@ -1,5 +1,6 @@
 body {
     padding-top: 10rem;
+    overflow-x: hidden;
     font-weight: 500;
     letter-spacing: 1px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -450,8 +451,19 @@ footer {
     .navbar-toggler {
         display: flex;
     }
-    .logo-text {
-        font-size: 1.4rem;
+
+    .cartel-texto ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cartel-texto ul li.mucho-mas-li {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .cartel-texto p{
+        text-align: center;
     }
 }
     
@@ -473,19 +485,28 @@ footer {
         height: 400px;
     }
 
-    .cartel-presentacion > img {
+    .cartel-foto {
+        width: 100%; 
         max-width: 350px;
+        margin: 0 auto;
+        padding: 10px 10px 40px 10px;
+    }
+
+    .cartel-foto img {
+        width: 100%;
+        height: auto;
+    }
+
+    .cartel-presentacion > img {
+        max-width: 300px;
         max-height: 150px;
     }
 
     .cartel-texto ul {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .cartel-texto ul li.mucho-mas-li {
-        grid-column: 1 / -1;
-        display: flex;
-        justify-content: center;
+        grid-template-columns: 1fr;;
+        gap: 1rem;
+        width: 100%;
+        padding: 0;
     }
 
     .cartel-texto p {
