@@ -269,7 +269,6 @@
             </form>
         </div>
     </div>
-
     <footer>
         <div class="footer-info">
             <div class="footer-nostros">
@@ -279,9 +278,9 @@
             <div class="footer-links">
                 <h4>Enlaces Rápidos</h4>
                 <ul>
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="1.html">Productos</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="templates/1.html">Productos</a></li>
+                    <li><a href="templates/contacto.html">Contacto</a></li>
                 </ul>
             </div>
             <div class="footer-contactos">
@@ -293,9 +292,9 @@
             </div>
         </div>
         <div class="redes">
-            <ul><li><a href="https://www.instagram.com/liladesign__/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><img src="../assets/instagram_logo.jpg" alt="Instagram de Lila Design" width="45" height="45"></a></li></ul>
-            <ul><li><a href="https://www.facebook.com/liladesign" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><img src="../assets/facebook_logo.png" alt="Facebook de Lila Design" width="45" height="45"></a></li></ul>
-            <ul><li><a href="https://wa.me/5492324524738" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><img src="../assets/whatsapp_logo.jpg" alt="WhatsApp de Lila Design" width="45" height="45"></a></li></ul>
+            <ul><li><a href="https://www.instagram.com/liladesign__/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><img src="assets/instagram_logo.jpg" alt="Instagram de Lila Design" width="45" height="45"></a></ul>
+            <ul><li><a href="https://www.facebook.com/liladesign" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><img src="assets/facebook_logo.png" alt="Facebook de Lila Design" width="45" height="45"></a></ul>
+            <ul><li><a href="https://wa.me/5492324524738" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><img src="assets/whatsapp_logo.jpg" alt="WhatsApp de Lila Design" width="45" height="45"></a></ul>
         </div>
         <div class="lineas-decorativas"></div>
         <div class="derechos">
@@ -304,53 +303,101 @@
         </div>
     </footer>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const togglerBtn = document.querySelector('.navbar-toggler');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileOverlay = document.getElementById('mobileOverlay');
-        const closeBtn = document.querySelector('.mobile-close-btn');
+        // Funcionalidad del menú hamburguesa
+            const togglerBtn = document.querySelector('.navbar-toggler');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileOverlay = document.getElementById('mobileOverlay');
+            const closeBtn = document.querySelector('.mobile-close-btn');
 
-        function openMenu() {
-            mobileMenu.classList.add('show');
-            mobileOverlay.classList.add('show');
-            togglerBtn.setAttribute('aria-expanded', 'true');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeMenu() {
-            mobileMenu.classList.remove('show');
-            mobileOverlay.classList.remove('show');
-            togglerBtn.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        }
-
-        togglerBtn.addEventListener('click', function() {
-            if (mobileMenu.classList.contains('show')) {
-                closeMenu();
-            } else {
-                openMenu();
+            function openMenu() {
+                mobileMenu.classList.add('show');
+                mobileOverlay.classList.add('show');
+                togglerBtn.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
             }
-        });
 
-        closeBtn.addEventListener('click', closeMenu);
-        mobileOverlay.addEventListener('click', closeMenu);
-
-        const mobileLinks = document.querySelectorAll('.mobile-menu-links a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && mobileMenu.classList.contains('show')) {
-                closeMenu();
+            function closeMenu() {
+                mobileMenu.classList.remove('show');
+                mobileOverlay.classList.remove('show');
+                togglerBtn.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
             }
-        });
-        const telefonoInput = document.getElementById('telefono');
-        telefonoInput.addEventListener('input', function(e) {
-            // Permitir solo números, espacios, + y -
-            this.value = this.value.replace(/[^0-9+\s\-]/g, '');
-        });
+
+            togglerBtn.addEventListener('click', function() {
+                if (mobileMenu.classList.contains('show')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            closeBtn.addEventListener('click', closeMenu);
+            mobileOverlay.addEventListener('click', closeMenu);
+
+            // Funcionalidad para expandir/contraer submenús
+            const mobileMenuItems = document.querySelectorAll('.mobile-menu-links > li');
+
+            mobileMenuItems.forEach(item => {
+                const link = item.querySelector('a');
+                const submenu = item.querySelector('ul');
+
+                if (submenu) {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+
+                        // Cerrar otros submenús del mismo nivel
+                        mobileMenuItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('active');
+                            }
+                        });
+
+                        // Toggle del submenú actual
+                        item.classList.toggle('active');
+                    });
+
+                    // Funcionalidad para sub-submenús
+                    const subItems = submenu.querySelectorAll('li');
+                    subItems.forEach(subItem => {
+                        const subLink = subItem.querySelector('a');
+                        const subSubmenu = subItem.querySelector('ul');
+
+                        if (subSubmenu) {
+                            subLink.addEventListener('click', function(e) {
+                                e.preventDefault();
+
+                                // Cerrar otros sub-submenús del mismo nivel
+                                subItems.forEach(otherSubItem => {
+                                    if (otherSubItem !== subItem) {
+                                        otherSubItem.classList.remove('active');
+                                    }
+                                });
+
+                                // Toggle del sub-submenú actual
+                                subItem.classList.toggle('active');
+                            });
+                        }
+                    });
+                }
+            });
+
+            // Cerrar menú al hacer clic en enlaces sin submenú
+            const finalLinks = document.querySelectorAll('.mobile-menu-links a');
+            finalLinks.forEach(link => {
+                if (!link.nextElementSibling || link.nextElementSibling.tagName !== 'UL') {
+                    link.addEventListener('click', closeMenu);
+                }
+            });
+
+            // Cerrar menú con tecla Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('show')) {
+                    closeMenu();
+                }
+            });
     </script>
 </body>
 </html>
