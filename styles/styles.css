@@ -1,6 +1,5 @@
 body {
-    padding-top: 10rem;
-    overflow-x: hidden;
+    padding-top: 9rem;
     font-weight: 500;
     letter-spacing: 1px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -42,7 +41,6 @@ nav {
 }
 
 .logo img {
-    border-radius: 50%;
     transition: transform 0.3s;
 }
 
@@ -53,7 +51,7 @@ nav {
 .logo-text {
     font-size: 2rem;
     font-weight: 700;
-    color: #1cffecf3;
+    color: #51a3b0;
 }
 
 .logo:hover, .logo-text {
@@ -74,7 +72,7 @@ nav {
 
 .nav-menu li a {
     text-decoration: none;
-    color: #00c8b7f3;
+    color: #51a3b0;
     font-weight: 700;
     font-size: 1.1rem;
     transition: all 0.3s ease;
@@ -119,8 +117,8 @@ nav {
 }
 
 .nav-menu ul li a:hover {
-    border-left-color: #00c8b7f3;
-    color: #00c8b7f3;
+    border-left-color: #51a3b0;
+    color: #51a3b0;
 }
 
 .nav-menu ul ul {
@@ -136,7 +134,7 @@ nav {
 
 .navbar-toggler {
     display: none;
-    fill: #00c8b7f3;
+    fill: #51a3b0;
 }
 
 .mobile-menu {
@@ -160,7 +158,7 @@ nav {
     top: 1rem;
     right: 1rem;
     border: none;
-    color: #00c8b7f3;
+    color: #51a3b0;
 }
 
 .mobile-menu-links {
@@ -173,7 +171,7 @@ nav {
 .mobile-menu-links > li > a {
     display: flex;
     padding: 1rem;
-    color: #00c8b7f3;
+    color: #51a3b0;
     text-shadow: none;
     text-decoration: none;
     font-weight: 700;
@@ -184,8 +182,8 @@ nav {
 
 .mobile-menu-links > li > a:hover {
     background: #e0e0e0;
-    border-left-color: #00c8b7f3;
-    color: #00c8b7f3;
+    border-left-color: #51a3b0;
+    color: #51a3b0;
 }
 
 .mobile-menu-links ul {
@@ -212,8 +210,8 @@ nav {
 
 .mobile-menu-links ul > li > a:hover {
     background: #e0e0e0;
-    border-left-color: #00c8b7f3;
-    color: #00c8b7f3;
+    border-left-color: #51a3b0;
+    color: #51a3b0;
 }
 
 .mobile-menu-links ul ul > li > a {
@@ -477,8 +475,9 @@ footer {
         display: flex;
     }
 
+    
     .logo-text {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
     }
 
     .carousel-item {
@@ -499,7 +498,7 @@ footer {
 
     .cartel-presentacion > img {
         max-width: 300px;
-        max-height: 150px;
+        max-height: 80px;
     }
 
     .cartel-texto ul {
