@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contacto - Lila Design">
-    <title>Contacto - Lila Design</title>
+    <title>Sobre Mi - Lila Design</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Birthstone&family=Corinthia:wght@400;700&family=Fleur+De+Leah&family=Great+Vibes&family=Italianno&family=Monsieur+La+Doulaise&family=Press+Start+2P&family=Quintessential&display=swap" rel="stylesheet">
@@ -202,73 +202,6 @@
         </ul>
     </div>
     <div class="mobile-menu-overlay" id="mobileOverlay"></div>
-    
-    <div class="contacto-wrapper">
-        <div class="container">
-            <div class="contacto-header">
-                <h1>Envía tu Mensaje</h1>
-                <p>¿Tenés alguna consulta o querés hacer un pedido? ¡Escribinos!</p>
-            </div>
-            
-            <form class="form-contacto" action="https://formspree.io/f/mjkroago" method="POST" id="contactForm">
-                <div class="form-row-grid">
-                    <div class="form-field">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" maxlength="50">
-                    </div>
-                    
-                    <div class="form-field">
-                        <label for="apellido">Apellido</label>
-                        <input type="text" id="apellido" name="apellido" required placeholder="Tu apellido" maxlength="50">
-                    </div>
-                </div>
-
-                <div class="form-row-grid">
-                    <div class="form-field">
-                        <label for="email">Correo Electrónico</label>
-                        <input type="email" id="email" name="email" required placeholder="ejemplo@email.com" maxlength="100">
-                    </div>
-
-                    <div class="form-field">
-                        <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono" required placeholder="+54 9 11 1234-5678" pattern="[0-9+\s\-]+" title="Solo se permiten números, espacios, + y -" maxlength="20">
-                    </div>
-                </div>
-                
-                <div class="form-row-grid">
-                    <div class="form-field full-width">
-                        <label for="asunto">Pedidos/Asutntos</label>
-                        <select id="asunto" name="asunto" required>
-                            <option value="">Selecciona tu pedido o Asunto</option>
-                            <option value="consulta-general">Consulta General</option>
-                            <option value="pedido-personalizado">Pedido Personalizado</option>
-                            <option value="tote-bags">Tote Bags</option>
-                            <option value="fotos">Fotos</option>
-                            <option value="agendas">Agendas</option>
-                            <option value="albumes">Álbumes</option>
-                            <option value="stickers">Stickers</option>
-                            <option value="llaveros">Llaveros</option>
-                            <option value="cuadros">Cuadros</option>
-                            <option value="tarjetas">Tarjetas Personales</option>
-                            <option value="otros">Otros Productos</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="form-row-grid">
-                    <div class="form-field full-width">
-                        <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" name="mensaje" required placeholder="Escribe tu mensaje aquí..."></textarea maxlength="500">
-                    </div>
-                </div>
-                
-                <div class="form-actions">
-                    <button type="submit" class="btn-form btn-enviar-form">Enviar Mensaje</button>
-                    <button type="reset" class="btn-form btn-limpiar" onclick="limpiarFormulario()">Limpiar</button>
-                </div>
-            </form>
-        </div>
-    </div>
     <footer>
         <div class="footer-info">
             <div class="footer-nostros">
