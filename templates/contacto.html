@@ -18,7 +18,7 @@
         <div class="lineas-decorativas"></div>
         <nav>
             <div class="nav-container">
-                <a href="#" class="logo">
+                <a href="../index.html" class="logo">
                     <img src="../assets/logo.png" alt="Logo de Lila Design" width="70" height="80">
                     <span class="logo-text">LILA DESIGN</span>
                 </a>
@@ -202,72 +202,81 @@
         </ul>
     </div>
     <div class="mobile-menu-overlay" id="mobileOverlay"></div>
-    
-    <div class="contacto-wrapper">
-        <div class="container">
-            <div class="contacto-header">
-                <h1>Envía tu Mensaje</h1>
-                <p>¿Tenés alguna consulta o querés hacer un pedido? ¡Escribinos!</p>
+    <div class="encabezados">
+        <h1>Envía tu Mensaje</h1>
+        <p>¿Tenés alguna consulta o querés hacer un pedido? ¡Escribinos!</p>
+    </div>
+    <div class="contactos">
+        <div class="contactos-redes">
+            <h2>Mis Redes</h2>
+            <div class="redes-icons">
+                <a href="https://www.instagram.com/liladesign__/" target="_blank" aria-label="Instagram"><img src="../assets/instagram_logo.jpg" alt="Instagram"><span>Instagram</span></a>
+                <a href="https://www.facebook.com/liladesign" target="_blank" aria-label="Facebook"><img src="../assets/facebook_logo.png" alt="Facebook"><span>Facebook</span></a>
+                <a href="https://wa.me/5492324524738" target="_blank" aria-label="WhatsApp"><img src="../assets/whatsapp_logo.jpg" alt="WhatsApp"><span>WhatsApp</span></a>
             </div>
-            
-            <form class="form-contacto" action="https://formspree.io/f/mjkroago" method="POST" id="contactForm">
-                <div class="form-row-grid">
-                    <div class="form-field">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" maxlength="50">
-                    </div>
-                    
-                    <div class="form-field">
-                        <label for="apellido">Apellido</label>
-                        <input type="text" id="apellido" name="apellido" required placeholder="Tu apellido" maxlength="50">
-                    </div>
-                </div>
-
-                <div class="form-row-grid">
-                    <div class="form-field">
-                        <label for="email">Correo Electrónico</label>
-                        <input type="email" id="email" name="email" required placeholder="ejemplo@email.com" maxlength="100">
-                    </div>
-
-                    <div class="form-field">
-                        <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono" required placeholder="+54 9 11 1234-5678" pattern="[0-9+\s\-]+" title="Solo se permiten números, espacios, + y -" maxlength="20">
-                    </div>
-                </div>
-                
-                <div class="form-row-grid">
-                    <div class="form-field full-width">
-                        <label for="asunto">Pedidos/Asutntos</label>
-                        <select id="asunto" name="asunto" required>
-                            <option value="">Selecciona tu pedido o Asunto</option>
-                            <option value="consulta-general">Consulta General</option>
-                            <option value="pedido-personalizado">Pedido Personalizado</option>
-                            <option value="tote-bags">Tote Bags</option>
-                            <option value="fotos">Fotos</option>
-                            <option value="agendas">Agendas</option>
-                            <option value="albumes">Álbumes</option>
-                            <option value="stickers">Stickers</option>
-                            <option value="llaveros">Llaveros</option>
-                            <option value="cuadros">Cuadros</option>
-                            <option value="tarjetas">Tarjetas Personales</option>
-                            <option value="otros">Otros Productos</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="form-row-grid">
-                    <div class="form-field full-width">
-                        <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" name="mensaje" required placeholder="Escribe tu mensaje aquí..."></textarea maxlength="500">
-                    </div>
-                </div>
-                
-                <div class="form-actions">
-                    <button type="submit" class="btn-form btn-enviar-form">Enviar Mensaje</button>
-                    <button type="reset" class="btn-form btn-limpiar" onclick="limpiarFormulario()">Limpiar</button>
-                </div>
-            </form>
+            <div class="datos-contacto">
+                <p>📧 aylenrodriguez97@gmail.com</p>
+                <p>📞 +54 9 2324 52-4738</p>
+            </div>
         </div>
+        <form class="form-contacto" action="https://formspree.io/f/mjkroago" method="POST" id="contactForm">
+            <h2>Escribeme</h2>
+            <div class="form-row-grid">
+                <div class="form-field">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" maxlength="50">
+                </div>
+
+                <div class="form-field">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido" required placeholder="Tu apellido" maxlength="50">
+                </div>
+            </div>
+
+            <div class="form-row-grid">
+                <div class="form-field">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required placeholder="ejemplo@email.com" maxlength="100">
+                </div>
+
+                <div class="form-field">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" required placeholder="+54 9 11 1234-5678" pattern="[0-9+\s\-]+" title="Solo se permiten números, espacios, + y -" maxlength="20">
+                </div>
+            </div>
+
+            <div class="form-row-grid">
+                <div class="form-field full-width">
+                    <label for="asunto">Pedidos/Asutntos</label>
+                    <select id="asunto" name="asunto" required>
+                        <option value="">Selecciona tu pedido o Asunto</option>
+                        <option value="consulta-general">Consulta General</option>
+                        <option value="pedido-personalizado">Pedido Personalizado</option>
+                        <option value="tote-bags">Tote Bags</option>
+                        <option value="fotos">Fotos</option>
+                        <option value="agendas">Agendas</option>
+                        <option value="albumes">Álbumes</option>
+                        <option value="stickers">Stickers</option>
+                        <option value="llaveros">Llaveros</option>
+                        <option value="cuadros">Cuadros</option>
+                        <option value="tarjetas">Tarjetas Personales</option>
+                        <option value="otros">Otros Productos</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row-grid">
+                <div class="form-field full-width">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" required placeholder="Escribe tu mensaje aquí..."></textarea maxlength="500">
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit">Enviar Mensaje</button>
+                <button type="reset" onclick="limpiarFormulario()">Limpiar</button>
+            </div>
+        </form>
     </div>
     <footer>
         <div class="footer-info">

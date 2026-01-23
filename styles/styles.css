@@ -344,7 +344,7 @@ nav {
     border-radius: 10px;
 }
 
-.catalogo h1{
+.encabezados h1{
     color: #00c8b7f3;
     font-family: "Birthstone", cursive;
     font-weight: 400;
@@ -352,11 +352,136 @@ nav {
     text-align: center;
 }
 
-.catalogo p{
+.encabezados p{
     font-family: "Quintessential", serif;
     font-weight: 400;
     font-size: 1.5rem;
     text-align: center;
+}
+
+.contactos{
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding-top: 2rem;
+}
+
+.contactos h2{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #51a3b0;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-decoration: underline;
+}
+
+.redes-icons{
+    gap: 2.5rem;
+    margin: 2rem 0;
+}
+.redes-icons a {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    text-decoration: none;
+    transition: transform 0.3s;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000000;
+}
+
+.redes-icons img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    padding: 8px;
+    transition: 0.3s ease;
+}
+
+.redes-icons a:hover img {
+    transform: scale(1.25) rotate(5deg);
+}
+
+.redes-icons a span{
+    transition: transform 0.3s ease;
+}
+
+.redes-icons a:hover span{
+    transform: scale(1.25);
+    color: #ffa844;
+}
+
+.datos-contacto {
+    margin-top: 4rem;
+    font-size: 1rem;
+}
+
+.form-contacto, .contactos-redes{
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px #c0c0c0;
+}
+
+.form-row-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+.form-field{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    border-radius: 15px;
+}
+
+.form-field.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-field label {
+    color: #00c8b7;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.form-field input, .form-field select, .form-field textarea{
+    padding: 0.5rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+    outline: none;
+    border-color: #00c8b7;
+}
+
+.form-actions{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.form-actions button{
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    border: none;
+    font-family: "Quintessential", serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: #005e86;
+    color: #ffffff;
+    box-shadow: 0 6px 12px #c0c0c0;
+    transition: all 0.3s ease;
+}
+
+.form-actions button:hover{
+    transform: translateY(-3px);
+    color: #005e86;
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px #242424;
 }
 
 footer {
@@ -477,7 +602,7 @@ footer {
 
     
     .logo-text {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     .carousel-item {
@@ -510,6 +635,33 @@ footer {
 
     .cartel-texto p {
         text-align: center;
+    }
+    
+    .contactos{
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .contactos-redes,.form-contacto{
+        width: 100%;
+        max-width: 500px;
+    }
+    .form-row-grid{
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .form-field.full-width{
+        grid-column: auto;
+    }
+
+    .form-contacto{
+        padding: 2rem 1.5rem;
+    }
+
+    .encabezados h1{
+        font-size: 4rem;
     }
 
     .footer-info{
