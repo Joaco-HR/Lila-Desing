@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contacto - Lila Design">
+    <meta name="description" content="Sobre Lila Design - Conoce nuestra historia y misión">
     <title>Sobre Mi - Lila Design</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -150,17 +150,17 @@
                             <li><a href="#">Protector de cámara</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">RECUERDOS ▾</a>
-                         <ul>
-                             <li><a href="#">Polaroid</a></li>
-                             <li><a href="#">Mini polaroid</a></li>
-                             <li><a href="#">Standard</a></li>
-                             <li><a href="#">Maxi foto</a></li>
-                             <li><a href="#">Foto cuadro</a></li>
-                             <li><a href="#">QR / Frases</a></li>
-                             <li><a href="#">Polamusic</a></li>
-                             <li><a href="#">Cuadros 20x25</a></li>
-                         </ul>
+                   <li><a href="#">RECUERDOS ▾</a>
+                        <ul>
+                            <li><a href="#">Polaroid</a></li>
+                            <li><a href="#">Mini polaroid</a></li>
+                            <li><a href="#">Standard</a></li>
+                            <li><a href="#">Maxi foto</a></li>
+                            <li><a href="#">Foto cuadro</a></li>
+                            <li><a href="#">QR / Frases</a></li>
+                            <li><a href="#">Polamusic</a></li>
+                            <li><a href="#">Cuadros 20x25</a></li>
+                        </ul>
                     </li>
                     <li><a href="#">ADHESIVOS ▾</a>
                         <ul>
@@ -202,6 +202,11 @@
         </ul>
     </div>
     <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    
+    <div class="encabezados">
+        <h1>Sobre Nosotros</h1>
+        <p>Descubre la historia detrás de Lila Design</p>
+    </div>
     <footer>
         <div class="footer-info">
             <div class="footer-nostros">
@@ -220,8 +225,8 @@
             <div class="footer-contactos">
                 <h4>Contactos</h4>
                 <ul>
-                    <li>Email: aylenrodriguez97@gmail.com</li>
-                    <li>Teléfono: +54 9 2324 52-4738</li>
+                    <li><img width="20" height="20" src="https://img.icons8.com/color/48/gmail-new.png" alt="gmail-new"/> - aylenrodriguez97@gmail.com</li>
+                    <li><img width="20" height="20" src="https://img.icons8.com/glyph-neue/64/40C057/phone.png" alt="phone"/> + 54 9 2324 52-4738</li>
                 </ul>
             </div>
         </div>
@@ -236,11 +241,8 @@
             <p>realizado por Joaquin Hernan Rodriguez</p>
         </div>
     </footer>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Funcionalidad del menú hamburguesa
             const togglerBtn = document.querySelector('.navbar-toggler');
             const mobileMenu = document.getElementById('mobileMenu');
             const mobileOverlay = document.getElementById('mobileOverlay');
@@ -271,7 +273,6 @@
             closeBtn.addEventListener('click', closeMenu);
             mobileOverlay.addEventListener('click', closeMenu);
 
-            // Funcionalidad para expandir/contraer submenús
             const mobileMenuItems = document.querySelectorAll('.mobile-menu-links > li');
 
             mobileMenuItems.forEach(item => {
@@ -282,18 +283,15 @@
                     link.addEventListener('click', function(e) {
                         e.preventDefault();
 
-                        // Cerrar otros submenús del mismo nivel
                         mobileMenuItems.forEach(otherItem => {
                             if (otherItem !== item) {
                                 otherItem.classList.remove('active');
                             }
                         });
 
-                        // Toggle del submenú actual
                         item.classList.toggle('active');
                     });
 
-                    // Funcionalidad para sub-submenús
                     const subItems = submenu.querySelectorAll('li');
                     subItems.forEach(subItem => {
                         const subLink = subItem.querySelector('a');
@@ -302,34 +300,16 @@
                         if (subSubmenu) {
                             subLink.addEventListener('click', function(e) {
                                 e.preventDefault();
-
-                                // Cerrar otros sub-submenús del mismo nivel
                                 subItems.forEach(otherSubItem => {
                                     if (otherSubItem !== subItem) {
                                         otherSubItem.classList.remove('active');
                                     }
                                 });
 
-                                // Toggle del sub-submenú actual
                                 subItem.classList.toggle('active');
                             });
                         }
                     });
-                }
-            });
-
-            // Cerrar menú al hacer clic en enlaces sin submenú
-            const finalLinks = document.querySelectorAll('.mobile-menu-links a');
-            finalLinks.forEach(link => {
-                if (!link.nextElementSibling || link.nextElementSibling.tagName !== 'UL') {
-                    link.addEventListener('click', closeMenu);
-                }
-            });
-
-            // Cerrar menú con tecla Escape
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && mobileMenu.classList.contains('show')) {
-                    closeMenu();
                 }
             });
     </script>
