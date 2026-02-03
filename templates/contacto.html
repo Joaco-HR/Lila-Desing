@@ -112,6 +112,7 @@
         </nav>
         <div class="lineas-decorativas"></div>
     </header>
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-close-btn" aria-label="Cerrar menú">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
@@ -121,10 +122,26 @@
         
         <ul class="mobile-menu-links">
             <li><a href="../index.html">Inicio</a></li>
-            <li><a href="productos.html">Productos ▾</a>
-                <ul>
-                    <li><a href="productos.html#eventos-souvenirs">EVENTOS/SOUVENIRS ▸</a>
-                        <ul>
+            <li class="has-children">
+                <div class="menu-item-wrapper">
+                    <a href="productos.html" class="menu-link">Productos</a>
+                    <button class="submenu-toggle" aria-label="Abrir submenú">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </button>
+                </div>
+                <ul class="submenu">
+                    <li class="has-children">
+                        <div class="menu-item-wrapper">
+                            <a href="productos.html#eventos-souvenirs" class="menu-link">EVENTOS/SOUVENIRS</a>
+                            <button class="submenu-toggle" aria-label="Abrir submenú">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <ul class="submenu">
                             <li><a href="productos.html#eventos-souvenirs">Tarjetas e invitaciones digitales</a></li>
                             <li><a href="productos.html#eventos-souvenirs">Polaroid con descripción</a></li>
                             <li><a href="productos.html#eventos-souvenirs">Polaroid con imán</a></li>
@@ -137,8 +154,16 @@
                             <li><a href="productos.html#eventos-souvenirs">Vinos personalizados</a></li>
                         </ul>
                     </li>
-                    <li><a href="productos.html#celulares">CELULARES ▾</a>
-                        <ul>
+                    <li class="has-children">
+                        <div class="menu-item-wrapper">
+                            <a href="productos.html#celulares" class="menu-link">CELULARES</a>
+                            <button class="submenu-toggle" aria-label="Abrir submenú">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <ul class="submenu">
                             <li><a href="productos.html#celulares">Fundas silicone case</a></li>
                             <li><a href="productos.html#celulares">Fundas magsafe</a></li>
                             <li><a href="productos.html#celulares">Fundas transparentes</a></li>
@@ -150,8 +175,16 @@
                             <li><a href="productos.html#celulares">Protector de cámara</a></li>
                         </ul>
                     </li>
-                    <li><a href="productos.html#recuerdos">RECUERDOS ▾</a>
-                         <ul>
+                    <li class="has-children">
+                        <div class="menu-item-wrapper">
+                            <a href="productos.html#recuerdos" class="menu-link">RECUERDOS</a>
+                            <button class="submenu-toggle" aria-label="Abrir submenú">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <ul class="submenu">
                              <li><a href="productos.html#recuerdos">Polaroid</a></li>
                              <li><a href="productos.html#recuerdos">Mini polaroid</a></li>
                              <li><a href="productos.html#recuerdos">Standard</a></li>
@@ -162,8 +195,16 @@
                              <li><a href="productos.html#recuerdos">Cuadros 20x25</a></li>
                          </ul>
                     </li>
-                    <li><a href="productos.html#adhesivo">ADHESIVOS ▾</a>
-                        <ul>
+                    <li class="has-children">
+                        <div class="menu-item-wrapper">
+                            <a href="productos.html#adhesivo" class="menu-link">ADHESIVOS</a>
+                            <button class="submenu-toggle" aria-label="Abrir submenú">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <ul class="submenu">
                             <li><a href="productos.html#adhesivo">Stickers de papel</a></li>
                             <li><a href="productos.html#adhesivo">Holograficos</a></li>
                             <li><a href="productos.html#adhesivo">Transparentes</a></li>
@@ -172,24 +213,48 @@
                             <li><a href="productos.html#adhesivo">DTF TEXTIL</a></li>
                         </ul>
                     </li>
-                    <li><a href="productos.html#emprendedores">EMPRENDEDORES ▾</a>
-                        <ul>
+                    <li class="has-children">
+                        <div class="menu-item-wrapper">
+                            <a href="productos.html#emprendedores" class="menu-link">EMPRENDEDORES</a>
+                            <button class="submenu-toggle" aria-label="Abrir submenú">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <ul class="submenu">
                             <li><a href="productos.html#emprendedores">Combo emprendedor</a></li>
                             <li><a href="productos.html#emprendedores">Tarjetas personalizadas</a></li>
                             <li><a href="productos.html#emprendedores">Logos</a></li>
                             <li><a href="productos.html#emprendedores">Bolsas de friselina con logo</a></li>
                         </ul>
                     </li>
-                    <li><a href="productos.html#tote-bags">TOTE BAGS ▾</a>
-                        <ul>
+                    <li class="has-children">
+                        <div class="menu-item-wrapper">
+                            <a href="productos.html#tote-bags" class="menu-link">TOTE BAGS</a>
+                            <button class="submenu-toggle" aria-label="Abrir submenú">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <ul class="submenu">
                             <li><a href="productos.html#tote-bags">Tote bag big</a></li>
                             <li><a href="productos.html#tote-bags">Tote bag A5</a></li>
                             <li><a href="productos.html#tote-bags">Tote wine</a></li>
                             <li><a href="productos.html#tote-bags">Bolsa souvenir</a></li>
                         </ul>
                     </li>
-                    <li><a href="productos.html#organiza-ideas">ORGANIZA TUS IDEAS ▾</a>
-                        <ul>
+                    <li class="has-children">
+                        <div class="menu-item-wrapper">
+                            <a href="productos.html#organiza-ideas" class="menu-link">ORGANIZA TUS IDEAS</a>
+                            <button class="submenu-toggle" aria-label="Abrir submenú">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <ul class="submenu">
                             <li><a href="productos.html#organiza-ideas">Agendas</a></li>
                             <li><a href="productos.html#organiza-ideas">Libretas</a></li>
                             <li><a href="productos.html#organiza-ideas">Cuadernos</a></li>
@@ -201,7 +266,6 @@
             <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </div>
-    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
     <div class="encabezados">
         <h1>Envía tu Mensaje</h1>
         <p>¿Tenés alguna consulta o querés hacer un pedido? ¡Escribinos!</p>
@@ -314,76 +378,99 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-            const togglerBtn = document.querySelector('.navbar-toggler');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const mobileOverlay = document.getElementById('mobileOverlay');
-            const closeBtn = document.querySelector('.mobile-close-btn');
+        // Menú hamburguesa móvil MEJORADO
+        const togglerBtn = document.querySelector('.navbar-toggler');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        const closeBtn = document.querySelector('.mobile-close-btn');
 
-            function openMenu() {
-                mobileMenu.classList.add('show');
-                mobileOverlay.classList.add('show');
-                togglerBtn.setAttribute('aria-expanded', 'true');
-                document.body.style.overflow = 'hidden';
+        function openMenu() {
+            mobileMenu.classList.add('show');
+            mobileOverlay.classList.add('show');
+            togglerBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('show');
+            mobileOverlay.classList.remove('show');
+            togglerBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+            
+            // Cerrar todos los submenús al cerrar el menú
+            document.querySelectorAll('.has-children').forEach(item => {
+                item.classList.remove('active');
+            });
+        }
+
+        togglerBtn.addEventListener('click', function() {
+            if (mobileMenu.classList.contains('show')) {
+                closeMenu();
+            } else {
+                openMenu();
             }
+        });
 
-            function closeMenu() {
-                mobileMenu.classList.remove('show');
-                mobileOverlay.classList.remove('show');
-                togglerBtn.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            }
+        closeBtn.addEventListener('click', closeMenu);
+        mobileOverlay.addEventListener('click', closeMenu);
 
-            togglerBtn.addEventListener('click', function() {
-                if (mobileMenu.classList.contains('show')) {
-                    closeMenu();
+        // Nuevo sistema para manejar los botones de submenús
+        document.querySelectorAll('.submenu-toggle').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const parentLi = this.closest('.has-children');
+                const isCurrentlyActive = parentLi.classList.contains('active');
+                
+                // Cerrar otros submenús del mismo nivel
+                const siblings = Array.from(parentLi.parentElement.children).filter(
+                    child => child !== parentLi && child.classList.contains('has-children')
+                );
+                siblings.forEach(sibling => {
+                    sibling.classList.remove('active');
+                });
+                
+                // Toggle del submenú actual
+                parentLi.classList.toggle('active');
+                
+                // Rotar el ícono
+                const icon = this.querySelector('svg');
+                if (parentLi.classList.contains('active')) {
+                    icon.style.transform = 'rotate(90deg)';
                 } else {
-                    openMenu();
+                    icon.style.transform = 'rotate(0deg)';
                 }
             });
+        });
 
-            closeBtn.addEventListener('click', closeMenu);
-            mobileOverlay.addEventListener('click', closeMenu);
-
-            const mobileMenuItems = document.querySelectorAll('.mobile-menu-links > li');
-
-            mobileMenuItems.forEach(item => {
-                const link = item.querySelector('a');
-                const submenu = item.querySelector('ul');
-
-                if (submenu) {
-                    link.addEventListener('click', function(e) {
-                        e.preventDefault();
-
-                        mobileMenuItems.forEach(otherItem => {
-                            if (otherItem !== item) {
-                                otherItem.classList.remove('active');
-                            }
-                        });
-
-                        item.classList.toggle('active');
-                    });
-
-                    const subItems = submenu.querySelectorAll('li');
-                    subItems.forEach(subItem => {
-                        const subLink = subItem.querySelector('a');
-                        const subSubmenu = subItem.querySelector('ul');
-
-                        if (subSubmenu) {
-                            subLink.addEventListener('click', function(e) {
-                                e.preventDefault();
-
-                                subItems.forEach(otherSubItem => {
-                                    if (otherSubItem !== subItem) {
-                                        otherSubItem.classList.remove('active');
-                                    }
-                                });
-
-                                subItem.classList.toggle('active');
-                            });
-                        }
-                    });
+        // Permitir que los enlaces funcionen normalmente
+        document.querySelectorAll('.menu-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Si el enlace tiene href válido, permitir la navegación
+                if (this.getAttribute('href') && this.getAttribute('href') !== '#') {
+                    // Cerrar el menú móvil después de hacer clic
+                    closeMenu();
                 }
             });
+        });
+
+        // Cerrar menú al hacer clic en enlaces finales (sin submenús)
+        document.querySelectorAll('.mobile-menu-links a:not(.menu-link)').forEach(link => {
+            link.addEventListener('click', function() {
+                closeMenu();
+            });
+        });
+
+        // Prevenir que el clic en el wrapper cierre el submenú
+        document.querySelectorAll('.menu-item-wrapper').forEach(wrapper => {
+            wrapper.addEventListener('click', function(e) {
+                // Solo prevenir si se hizo clic en el wrapper mismo, no en sus hijos
+                if (e.target === this) {
+                    e.preventDefault();
+                }
+            });
+        });
     </script>
 </body>
 </html>

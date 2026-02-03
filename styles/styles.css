@@ -162,20 +162,40 @@ nav {
     top: 1rem;
     right: 1rem;
     border: none;
+    background: transparent;
     color: #51a3b0;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.mobile-close-btn:hover {
+    transform: scale(1.1);
+    color: #ff4444;
 }
 
 .mobile-menu-links {
     padding: 0;
-    margin-top: 1rem;
-    max-height: calc(100vh - 5rem);/*Scrool*/
-    overflow-y: auto;/*Scrool*/
+    margin-top: 3rem;
+    list-style: none;
+    max-height: calc(100vh - 5rem);
+    overflow-y: auto;
 }
 
-.mobile-menu-links > li > a {
+/* Nuevo: Wrapper para enlaces con botón de submenú */
+.menu-item-wrapper {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Nuevo: Estilo para enlaces dentro del wrapper */
+.menu-link {
+    flex: 1;
     padding: 1rem;
     color: #51a3b0;
     text-shadow: none;
@@ -183,59 +203,112 @@ nav {
     font-weight: 700;
     transition: 0.3s ease;
     border-left: 3px solid transparent;
-    transition: all 0.3s ease;
 }
 
-.mobile-menu-links > li > a:hover {
+/* Enlaces simples sin submenú */
+.mobile-menu-links > li > a:not(.menu-link) {
+    display: block;
+    padding: 1rem;
+    color: #51a3b0;
+    text-shadow: none;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.mobile-menu-links > li > a:not(.menu-link):hover,
+.menu-link:hover {
     background: #e0e0e0;
     border-left-color: #51a3b0;
     color: #51a3b0;
 }
 
-.mobile-menu-links ul {
+/* Nuevo: Botón para abrir/cerrar submenús */
+.submenu-toggle {
+    background: transparent;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    color: #51a3b0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.submenu-toggle:hover {
+    background: #e0e0e0;
+    color: #51a3b0;
+}
+
+.submenu-toggle svg {
+    transition: transform 0.3s ease;
+}
+
+/* Cuando el submenú está activo, rotar el ícono */
+.has-children.active > .menu-item-wrapper .submenu-toggle svg {
+    transform: rotate(90deg);
+}
+
+/* Submenús ocultos por defecto */
+.submenu {
     display: none;
     text-shadow: none;
     padding-left: 0;
     margin: 0;
+    list-style: none;
 }
 
-.mobile-menu-links li.active > ul {
+/* Mostrar submenú cuando el padre está activo */
+.has-children.active > .submenu {
     display: block;
 }
 
-.mobile-menu-links ul > li > a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
+/* Estilos para submenús de primer nivel */
+.submenu > li > .menu-item-wrapper .menu-link {
+    padding: 1rem 1.5rem;
     color: #333;
-    text-decoration: none;
     font-size: 0.9rem;
     border-left: 3px solid transparent;
-    transition: all 0.3s ease;
 }
 
-.mobile-menu-links ul > li > a:hover {
+.submenu > li > .menu-item-wrapper:hover .menu-link {
     background: #e0e0e0;
     border-left-color: #51a3b0;
     color: #51a3b0;
 }
 
-.mobile-menu-links ul ul > li > a {
-    padding: 0.7rem 2rem;
-    font-size: 0.9rem;
+/* Estilos para submenús de segundo nivel */
+.submenu .submenu > li > a {
+    display: block;
+    padding: 0.8rem 2rem;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.85rem;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
 }
 
+.submenu .submenu > li > a:hover {
+    background: #e0e0e0;
+    border-left-color: #51a3b0;
+    color: #51a3b0;
+}
+
+/* Scrollbar personalizado */
 .mobile-menu-links::-webkit-scrollbar {
     width: 6px;
 }
 
 .mobile-menu-links::-webkit-scrollbar-thumb {
     background: #a6a6a6f3;
+    border-radius: 3px;
 }
 
 .mobile-menu-links::-webkit-scrollbar-thumb:hover {
-    background: #a6a6a6f3;
+    background: #888888;
 }
 
 .mobile-menu-overlay {
