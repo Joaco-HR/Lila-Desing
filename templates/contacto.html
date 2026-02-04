@@ -13,14 +13,13 @@
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
-    <div class="page-wrapper" id="pageWrapper">
     <header>
         <div class="lineas-decorativas"></div>
         <nav>
-            <div class="nav-container">
+            <div class="nav-contenido">
                 <a href="../index.html" class="logo">
                     <img src="../assets/logo.png" alt="Logo de Lila Design" width="70" height="80">
-                    <span class="logo-text">LILA DESIGN</span>
+                    <span class="logo-texto">LILA DESIGN</span>
                 </a>
                 <ul class="nav-menu">
                     <li><a href="../index.html">Inicio</a></li>
@@ -101,9 +100,9 @@
                         </ul>
                     </li>
                     <li><a href="sobre-mi.html">Sobre Mi</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="contacto.html" class="active">Contacto</a></li>
                 </ul>
-                <button class="navbar-toggler" type="button" aria-label="Abrir menú" aria-expanded="false">
+                <button class="boton-hamburgueza" type="button" aria-label="Abrir menú" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#51a3b0" class="bi bi-list" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
                     </svg>
@@ -112,30 +111,30 @@
         </nav>
         <div class="lineas-decorativas"></div>
     </header>
-    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-close-btn" aria-label="Cerrar menú">
+    <div class="menu-hamburgueza-overlay" id="mobileOverlay"></div>
+    <div class="menu-hamburgueza" id="mobileMenu">
+        <button class="boton-cerrar" aria-label="Cerrar menú">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
               <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
             </svg>
         </button>
         
-        <ul class="mobile-menu-links">
+        <ul class="menu-hamburgueza-links">
             <li><a href="../index.html">Inicio</a></li>
-            <li class="has-children">
-                <div class="menu-item-wrapper">
+            <li class="submenus-hamburgueza">
+                <div class="submenus-hamburgueza-wrapper">
                     <a href="productos.html" class="menu-link">Productos</a>
-                    <button class="submenu-toggle" aria-label="Abrir submenú">
+                    <button class="boton-submenus" aria-label="Abrir submenú">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                         </svg>
                     </button>
                 </div>
                 <ul class="submenu">
-                    <li class="has-children">
-                        <div class="menu-item-wrapper">
+                    <li class="submenus-hamburgueza">
+                        <div class="submenus-hamburgueza-wrapper">
                             <a href="productos.html#eventos-souvenirs" class="menu-link">EVENTOS/SOUVENIRS</a>
-                            <button class="submenu-toggle" aria-label="Abrir submenú">
+                            <button class="boton-submenus" aria-label="Abrir submenú">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                                 </svg>
@@ -154,10 +153,10 @@
                             <li><a href="productos.html#eventos-souvenirs">Vinos personalizados</a></li>
                         </ul>
                     </li>
-                    <li class="has-children">
-                        <div class="menu-item-wrapper">
+                    <li class="submenus-hamburgueza">
+                        <div class="submenus-hamburgueza-wrapper">
                             <a href="productos.html#celulares" class="menu-link">CELULARES</a>
-                            <button class="submenu-toggle" aria-label="Abrir submenú">
+                            <button class="boton-submenus" aria-label="Abrir submenú">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                                 </svg>
@@ -175,10 +174,10 @@
                             <li><a href="productos.html#celulares">Protector de cámara</a></li>
                         </ul>
                     </li>
-                    <li class="has-children">
-                        <div class="menu-item-wrapper">
+                    <li class="submenus-hamburgueza">
+                        <div class="submenus-hamburgueza-wrapper">
                             <a href="productos.html#recuerdos" class="menu-link">RECUERDOS</a>
-                            <button class="submenu-toggle" aria-label="Abrir submenú">
+                            <button class="boton-submenus" aria-label="Abrir submenú">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                                 </svg>
@@ -195,10 +194,10 @@
                              <li><a href="productos.html#recuerdos">Cuadros 20x25</a></li>
                          </ul>
                     </li>
-                    <li class="has-children">
-                        <div class="menu-item-wrapper">
+                    <li class="submenus-hamburgueza">
+                        <div class="submenus-hamburgueza-wrapper">
                             <a href="productos.html#adhesivo" class="menu-link">ADHESIVOS</a>
-                            <button class="submenu-toggle" aria-label="Abrir submenú">
+                            <button class="boton-submenus" aria-label="Abrir submenú">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                                 </svg>
@@ -213,10 +212,10 @@
                             <li><a href="productos.html#adhesivo">DTF TEXTIL</a></li>
                         </ul>
                     </li>
-                    <li class="has-children">
-                        <div class="menu-item-wrapper">
+                    <li class="submenus-hamburgueza">
+                        <div class="submenus-hamburgueza-wrapper">
                             <a href="productos.html#emprendedores" class="menu-link">EMPRENDEDORES</a>
-                            <button class="submenu-toggle" aria-label="Abrir submenú">
+                            <button class="boton-submenus" aria-label="Abrir submenú">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                                 </svg>
@@ -229,10 +228,10 @@
                             <li><a href="productos.html#emprendedores">Bolsas de friselina con logo</a></li>
                         </ul>
                     </li>
-                    <li class="has-children">
-                        <div class="menu-item-wrapper">
+                    <li class="submenus-hamburgueza">
+                        <div class="submenus-hamburgueza-wrapper">
                             <a href="productos.html#tote-bags" class="menu-link">TOTE BAGS</a>
-                            <button class="submenu-toggle" aria-label="Abrir submenú">
+                            <button class="boton-submenus" aria-label="Abrir submenú">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                                 </svg>
@@ -245,10 +244,10 @@
                             <li><a href="productos.html#tote-bags">Bolsa souvenir</a></li>
                         </ul>
                     </li>
-                    <li class="has-children">
-                        <div class="menu-item-wrapper">
+                    <li class="submenus-hamburgueza">
+                        <div class="submenus-hamburgueza-wrapper">
                             <a href="productos.html#organiza-ideas" class="menu-link">ORGANIZA TUS IDEAS</a>
-                            <button class="submenu-toggle" aria-label="Abrir submenú">
+                            <button class="boton-submenus" aria-label="Abrir submenú">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                                 </svg>
@@ -378,11 +377,10 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Menú hamburguesa móvil MEJORADO
-        const togglerBtn = document.querySelector('.navbar-toggler');
+        const togglerBtn = document.querySelector('.boton-hamburgueza');
         const mobileMenu = document.getElementById('mobileMenu');
         const mobileOverlay = document.getElementById('mobileOverlay');
-        const closeBtn = document.querySelector('.mobile-close-btn');
+        const closeBtn = document.querySelector('.boton-cerrar');
 
         function openMenu() {
             mobileMenu.classList.add('show');
@@ -398,7 +396,7 @@
             document.body.style.overflow = '';
             
             // Cerrar todos los submenús al cerrar el menú
-            document.querySelectorAll('.has-children').forEach(item => {
+            document.querySelectorAll('.submenus-hamburgueza').forEach(item => {
                 item.classList.remove('active');
             });
         }
@@ -415,17 +413,17 @@
         mobileOverlay.addEventListener('click', closeMenu);
 
         // Nuevo sistema para manejar los botones de submenús
-        document.querySelectorAll('.submenu-toggle').forEach(button => {
+        document.querySelectorAll('.boton-submenus').forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
                 
-                const parentLi = this.closest('.has-children');
+                const parentLi = this.closest('.submenus-hamburgueza');
                 const isCurrentlyActive = parentLi.classList.contains('active');
                 
                 // Cerrar otros submenús del mismo nivel
                 const siblings = Array.from(parentLi.parentElement.children).filter(
-                    child => child !== parentLi && child.classList.contains('has-children')
+                    child => child !== parentLi && child.classList.contains('submenus-hamburgueza')
                 );
                 siblings.forEach(sibling => {
                     sibling.classList.remove('active');
@@ -456,14 +454,14 @@
         });
 
         // Cerrar menú al hacer clic en enlaces finales (sin submenús)
-        document.querySelectorAll('.mobile-menu-links a:not(.menu-link)').forEach(link => {
+        document.querySelectorAll('.menu-hamburgueza-links a:not(.menu-link)').forEach(link => {
             link.addEventListener('click', function() {
                 closeMenu();
             });
         });
 
         // Prevenir que el clic en el wrapper cierre el submenú
-        document.querySelectorAll('.menu-item-wrapper').forEach(wrapper => {
+        document.querySelectorAll('.submenus-hamburgueza-wrapper').forEach(wrapper => {
             wrapper.addEventListener('click', function(e) {
                 // Solo prevenir si se hizo clic en el wrapper mismo, no en sus hijos
                 if (e.target === this) {

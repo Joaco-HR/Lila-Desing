@@ -4,7 +4,6 @@ html {
 
 body {
     padding-top: 9rem;
-    font-weight: 500;
     letter-spacing: 1px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
@@ -30,7 +29,7 @@ nav {
     padding: 0 2rem;
 }
 
-.nav-container {
+.nav-contenido {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -52,13 +51,13 @@ nav {
     transform: scale(1.1) rotate(5deg);
 }
 
-.logo-text {
+.logo-texto {
     font-size: 2rem;
     font-weight: 700;
     color: #51a3b0;
 }
 
-.logo:hover, .logo-text {
+.logo:hover, .logo-texto {
     transform: scale(1.05);
 }
 
@@ -136,12 +135,13 @@ nav {
     transform: translateY(0);
 }
 
-.navbar-toggler {
+.boton-hamburgueza {
     display: none;
+    border: none;
     fill: #51a3b0;
 }
 
-.mobile-menu {
+.menu-hamburgueza {
     position: fixed;
     top: 0;
     right: -300px;
@@ -153,141 +153,93 @@ nav {
     z-index: 1050;
 }
 
-.mobile-menu.show {
+.menu-hamburgueza.show {
     right: 0;
 }
 
-.mobile-close-btn {
+.boton-cerrar {
     position: absolute;
     top: 1rem;
     right: 1rem;
     border: none;
-    background: transparent;
     color: #51a3b0;
-    cursor: pointer;
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: all 0.3s ease;
 }
 
 .mobile-close-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
     color: #ff4444;
 }
 
-.mobile-menu-links {
+.menu-hamburgueza-links {
     padding: 0;
-    margin-top: 3rem;
+    margin-top: 2rem;
     list-style: none;
-    max-height: calc(100vh - 5rem);
-    overflow-y: auto;
+    max-height: calc(100vh - 5rem);/*scroll */
+    overflow-y: auto;/*scroll */
 }
 
-/* Nuevo: Wrapper para enlaces con botón de submenú */
-.menu-item-wrapper {
+.submenus-hamburgueza-wrapper {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
 }
 
-/* Nuevo: Estilo para enlaces dentro del wrapper */
-.menu-link {
-    flex: 1;
-    padding: 1rem;
-    color: #51a3b0;
-    text-shadow: none;
-    text-decoration: none;
-    font-weight: 700;
-    transition: 0.3s ease;
-    border-left: 3px solid transparent;
-}
-
-/* Enlaces simples sin submenú */
-.mobile-menu-links > li > a:not(.menu-link) {
+.menu-link, .menu-hamburgueza-links > li > a:not(.menu-link) {
     display: block;
     padding: 1rem;
+    flex: 1;
     color: #51a3b0;
-    text-shadow: none;
     text-decoration: none;
     font-weight: 700;
     transition: 0.3s ease;
     border-left: 3px solid transparent;
 }
 
-.mobile-menu-links > li > a:not(.menu-link):hover,
-.menu-link:hover {
+.menu-hamburgueza-links > li > a:not(.menu-link):hover, .menu-link:hover {
     background: #e0e0e0;
     border-left-color: #51a3b0;
-    color: #51a3b0;
 }
 
-/* Nuevo: Botón para abrir/cerrar submenús */
-.submenu-toggle {
-    background: transparent;
+.boton-submenus {
     border: none;
     padding: 1rem;
-    cursor: pointer;
     color: #51a3b0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
 }
 
-.submenu-toggle:hover {
+.boton-submenus:hover {
     background: #e0e0e0;
-    color: #51a3b0;
 }
 
-.submenu-toggle svg {
+.boton-submenus svg {
     transition: transform 0.3s ease;
 }
 
-/* Cuando el submenú está activo, rotar el ícono */
-.has-children.active > .menu-item-wrapper .submenu-toggle svg {
+.submenus-hamburgueza.active > .submenus-hamburgueza-wrapper .boton-submenus svg {
     transform: rotate(90deg);
 }
 
-/* Submenús ocultos por defecto */
 .submenu {
     display: none;
-    text-shadow: none;
     padding-left: 0;
     margin: 0;
     list-style: none;
 }
 
-/* Mostrar submenú cuando el padre está activo */
-.has-children.active > .submenu {
+.submenus-hamburgueza.active > .submenu {
     display: block;
 }
 
-/* Estilos para submenús de primer nivel */
-.submenu > li > .menu-item-wrapper .menu-link {
+.submenu > li > .submenus-hamburgueza-wrapper .menu-link {
     padding: 1rem 1.5rem;
-    color: #333;
     font-size: 0.9rem;
-    border-left: 3px solid transparent;
 }
 
-.submenu > li > .menu-item-wrapper:hover .menu-link {
-    background: #e0e0e0;
-    border-left-color: #51a3b0;
-    color: #51a3b0;
-}
-
-/* Estilos para submenús de segundo nivel */
-.submenu .submenu > li > a {
+.submenu > li > a {
     display: block;
     padding: 0.8rem 2rem;
     color: #333;
     text-decoration: none;
     font-size: 0.85rem;
-    border-left: 3px solid transparent;
+    font-weight: 500;
     transition: all 0.3s ease;
 }
 
@@ -297,21 +249,20 @@ nav {
     color: #51a3b0;
 }
 
-/* Scrollbar personalizado */
-.mobile-menu-links::-webkit-scrollbar {
+.menu-hamburgueza-links::-webkit-scrollbar {
     width: 6px;
 }
 
-.mobile-menu-links::-webkit-scrollbar-thumb {
+.menu-hamburgueza-links::-webkit-scrollbar-thumb {
     background: #a6a6a6f3;
     border-radius: 3px;
 }
 
-.mobile-menu-links::-webkit-scrollbar-thumb:hover {
+.menu-hamburgueza-links::-webkit-scrollbar-thumb:hover {
     background: #888888;
 }
 
-.mobile-menu-overlay {
+.menu-hamburgueza-overlay {
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.5);
@@ -321,7 +272,7 @@ nav {
     z-index: 1040;
 }
 
-.mobile-menu-overlay.show {
+.menu-hamburgueza-overlay.show {
     opacity: 1;
     visibility: visible;
 }
@@ -357,7 +308,7 @@ nav {
 
 .cartel-foto {
     background: #ffffff;
-    padding: 15px 15px 50px 15px;
+    padding: 15px 15px 5px 15px;
     border-radius: 3px;
     border: 1px solid #e0e0e0;
     box-shadow: -8px 8px 15px rgba(0, 0, 0, 0.4);
@@ -367,6 +318,14 @@ nav {
 .cartel-foto img {
     display: block;
     object-fit: cover;
+}
+.cartel-foto p{
+    margin-top: 1rem;
+    text-decoration: underline;
+    font-family: "Quintessential", serif;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 1px;
 }
 
 .cartel-foto:hover {
@@ -439,7 +398,7 @@ nav {
     text-align: center;
 }
 
-.page-content-wrapper {
+.contenido-pagina {
     display: flex;
     max-width: 1400px;
     margin: 0 auto;
@@ -447,39 +406,35 @@ nav {
     gap: 2rem;
 }
 
-.sidebar-nav {
+.barra-lateral {
     position: sticky;
     top: 150px;
-    width: 280px;
-    height: fit-content;
-    background: #ffffff;
     border-radius: 15px;
-    padding: 1.5rem;
+    height: fit-content;
+    padding: 1.8rem;
     box-shadow: 0 6px 12px #c0c0c0;
     flex-shrink: 0;
 }
 
-.sidebar-nav h3 {
-    font-size: 1.5rem;
+.barra-lateral h2 {
+    font-size: 1.8rem;
     color: #51a3b0;
-    margin-bottom: 1.5rem;
     padding-bottom: 1rem;
     border-bottom: 3px solid #1cffecf3;
     font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-.sidebar-nav ul {
+.barra-lateral ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.sidebar-nav > ul > li {
-    margin-bottom: 0.5rem;
+.barra-lateral ul li {
+    margin-bottom: 0.8rem;
 }
 
-.sidebar-nav > ul > li > a {
+.categorias-links {
     display: block;
     padding: 0.8rem 1rem;
     color: #51a3b0;
@@ -488,85 +443,114 @@ nav {
     transition: all 0.3s ease;
     font-weight: 700;
     border-left: 3px solid transparent;
-    letter-spacing: 1px;
 }
 
-.sidebar-nav > ul > li > a:hover {
+.categorias-links:hover {
     background: #e0e0e0;
     border-left-color: #51a3b0;
-    transform: translateX(5px);
+    transform: translateX(-10px);
 }
 
-.sidebar-nav > ul > li > a.active {
+.categorias-links.active {
     background: #51a3b0;
     color: #ffffff;
     border-left-color: #1cffecf3;
 }
 
-.main-content {
-    flex: 1;
-    min-width: 0;
-}
-
-.category-section {
+.seccion{
+    max-width: 1400px;
     margin-bottom: 4rem;
-    padding: 2.5rem;
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 6px 12px #c0c0c0;
-    scroll-margin-top: 150px;
 }
 
-.category-section h2 {
+.seccion h1{
+    font-weight: 700;
     color: #51a3b0;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
     padding-bottom: 1rem;
+    margin-bottom: 2rem;
     border-bottom: 3px solid #1cffecf3;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-.products-grid {
+.seccion-grilla {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-top: 2rem;
 }
 
-.product-card {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    padding: 3rem;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    border: 2px solid #e0e0e0;
-    text-align: center;
+.tarjeta {
+    border-radius: 15px;
+    padding: 0;
+    box-shadow: 0 6px 12px #c0c0c0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
 }
 
-.product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 16px rgba(81, 163, 176, 0.3);
-    border-color: #51a3b0;
+.tarjeta:hover {
+    transform: translateY(-15px);
 }
 
-.product-card h3 {
-    color: #333;
-    font-size: 1.1rem;
-    margin-bottom: 0.8rem;
+.tarjeta img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.tarjeta-contenido {
+    border-top: 3px solid #2b2b2b;
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-contenido h3 {
+    font-size: 1.2rem;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    color: #51a3b0;
+    margin-bottom: 0.5rem;
+    min-height: 2.4rem;
 }
 
-.product-card p {
-    color: #666;
-    font-size: 0.9rem;
+.tarjeta-contenido > p {
+    min-height: 3rem;
+}
+
+.tarjeta-extras {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tarjeta-extras p {
     margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #e0ac00;
+    border-radius: 10px;
+    padding: 0.5rem;
+    border: 2px dashed #e0ac00;
 }
 
-.product-card::before {
-    display: block;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.tarjeta-extras button {
+    font-family: "Quintessential", serif;
+    font-weight: 400;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    color: #ffffff;
+    background-color: #005e86;
+    transition: 0.3s;
+}
+
+.tarjeta-extras button:hover {
+    transform: translateY(-3px);
+    color: #005e86;
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px #242424;
 }
 
 .contactos{
@@ -794,11 +778,11 @@ footer {
         display: none;
     }
 
-    .navbar-toggler {
+    .boton-hamburgueza {
         display: flex;
     }
 
-    .cartel-texto ul {
+    .cartel-texto ul, .seccion-grilla{
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -812,21 +796,16 @@ footer {
         text-align: center;
     }
 
-    .sidebar-nav {
+    .seccion{
+        scroll-margin-top: 180px;
+    }
+
+    .seccion h1{
+        text-align: center;
+    }
+    
+    .barra-lateral {
         display: none;
-    }
-
-    .page-content-wrapper {
-        padding: 1rem;
-    }
-
-    .category-section {
-        padding: 1.5rem;
-    }
-
-    .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 1rem;
     }
 }
     
@@ -836,12 +815,12 @@ footer {
         display: none;
     }
 
-    .navbar-toggler {
+    .boton-hamburgueza {
         display: flex;
     }
 
     
-    .logo-text {
+    .logo-texto {
         font-size: 1.5rem;
     }
 
@@ -853,7 +832,7 @@ footer {
         width: 100%; 
         max-width: 350px;
         margin: 0 auto;
-        padding: 10px 10px 40px 10px;
+        padding: 15px 15px 5px 15px;
     }
 
     .cartel-foto img {
@@ -867,7 +846,7 @@ footer {
     }
 
     .cartel-texto ul {
-        grid-template-columns: 1fr;;
+        grid-template-columns: 1fr;
         gap: 1rem;
         width: 100%;
         padding: 0;
@@ -875,14 +854,6 @@ footer {
 
     .cartel-texto p {
         text-align: center;
-    }
-    
-    .category-section h2 {
-        font-size: 2rem;
-    }
-
-    .products-grid {
-        grid-template-columns: 1fr;
     }
 
     .contactos{
@@ -893,6 +864,18 @@ footer {
 
     .encabezados h1{
         font-size: 3rem;
+    }
+
+    .seccion{
+        scroll-margin-top: 180px;
+    }
+
+    .seccion-grilla{
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta img {
+        height: 250px;
     }
 
     .form-row-grid{

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contacto - Lila Design">
+    <meta name="description" content="Productos - Lila Design">
     <title>Productos - Lila Design</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,16 +11,17 @@
     <link rel="icon" href="../assets/logo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/productos-menu-lateral.css">
 </head>
 <body>
     <div class="page-wrapper" id="pageWrapper">
     <header>
         <div class="lineas-decorativas"></div>
         <nav>
-            <div class="nav-container">
+            <div class="nav-contenido">
                 <a href="../index.html" class="logo">
                     <img src="../assets/logo.png" alt="Logo de Lila Design" width="70" height="80">
-                    <span class="logo-text">LILA DESIGN</span>
+                    <span class="logo-texto">LILA DESIGN</span>
                 </a>
                 <ul class="nav-menu">
                     <li><a href="../index.html">Inicio</a></li>
@@ -103,8 +104,8 @@
                     <li><a href="sobre-mi.html">Sobre Mi</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
-                <button class="navbar-toggler" type="button" aria-label="Abrir menú" aria-expanded="false">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#51a3b0" class="bi bi-list" viewBox="0 0 16 16">
+                <button class="boton-hamburgueza" type="button" aria-label="Abrir menú" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" class="bi bi-list" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
                     </svg>
                 </button>
@@ -112,20 +113,26 @@
         </nav>
         <div class="lineas-decorativas"></div>
     </header>
-
-    <!-- Menú móvil hamburguesa -->
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-close-btn" aria-label="Cerrar menú">
+    <div class="menu-hamburgueza-overlay" id="mobileOverlay"></div>
+    <div class="menu-hamburgueza" id="mobileMenu">
+        <button class="boton-cerrar" aria-label="Cerrar menú">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
               <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
             </svg>
         </button>
         
-        <ul class="mobile-menu-links">
+        <ul class="menu-hamburgueza-links">
             <li><a href="../index.html">Inicio</a></li>
-            <li>
-                <a href="productos.html" class="has-submenu">Productos ▾</a>
-                <ul>
+            <li class="submenus-hamburgueza">
+                <div class="submenus-hamburgueza-wrapper">
+                    <a href="productos.html" class="menu-link">Productos</a>
+                    <button class="boton-submenus" aria-label="Abrir submenú">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </button>
+                </div>
+                <ul class="submenu">
                     <li><a href="#eventos-souvenirs">EVENTOS/SOUVENIRS</a></li>
                     <li><a href="#celulares">CELULARES</a></li>
                     <li><a href="#recuerdos">RECUERDOS</a></li>
@@ -139,247 +146,631 @@
             <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </div>
-    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
-
-    <!-- Contenedor principal con menú lateral -->
-    <div class="page-content-wrapper">
-        <!-- Menú lateral de navegación (solo desktop) -->
-        <aside class="sidebar-nav">
-            <h3>Categorías</h3>
+    <div class="contenido-pagina">
+        <aside class="barra-lateral">
+            <h2>Categorías</h2>
             <ul>
-                <li><a href="#eventos-souvenirs" class="nav-link">Eventos/Souvenirs</a></li>
-                <li><a href="#celulares" class="nav-link">Celulares</a></li>
-                <li><a href="#recuerdos" class="nav-link">Recuerdos</a></li>
-                <li><a href="#adhesivos" class="nav-link">Adhesivos</a></li>
-                <li><a href="#emprendedores" class="nav-link">Emprendedores</a></li>
-                <li><a href="#tote-bags" class="nav-link">Tote Bags</a></li>
-                <li><a href="#organiza-ideas" class="nav-link">Organiza tus Ideas</a></li>
+                <li><a href="#eventos-souvenirs" class="categorias-links">EVENTOS/SOUVENIRS</a></li>
+                <li><a href="#celulares" class="categorias-links">CELULARES</a></li>
+                <li><a href="#recuerdos" class="categorias-links">RECUERDOS</a></li>
+                <li><a href="#adhesivos" class="categorias-links">ADHESIVOS</a></li>
+                <li><a href="#emprendedores" class="categorias-links">EMPRENDEDORES</a></li>
+                <li><a href="#tote-bags" class="categorias-links">TOTE BAGS</a></li>
+                <li><a href="#organiza-ideas" class="categorias-links">ORGANIZA TUS IDEAS</a></li>
             </ul>
         </aside>
 
-        <!-- Contenido principal -->
-        <main class="main-content">
-            <!-- Sección: Eventos/Souvenirs -->
-            <section id="eventos-souvenirs" class="category-section">
-                <h2>EVENTOS/SOUVENIRS</h2>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <h3>Tarjetas e invitaciones digitales</h3>
-                        <p>Invitaciones personalizadas para tus eventos</p>
+        <main class="contenido-pagina-wrapper">
+            <section id="eventos-souvenirs" class="seccion">
+                <h1>EVENTOS/SOUVENIRS</h1>
+                <div class="seccion-grilla">
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="https://i.pinimg.com/736x/57/3f/1c/573f1c30073c6291505c0ca1ade05946.jpg" alt="foto">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Tarjetas e invitaciones digitales</h3>
+                            <p>Invitaciones personalizadas para tus eventos</p>
+                            <div class="tarjeta-extras">
+                                <p>$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Polaroid con descripción</h3>
-                        <p>Fotos estilo polaroid con textos</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="https://acdn-us.mitiendanube.com/stores/001/425/343/products/polaroid_pack_251-02cb8e69f984f6aef516784555888918-640-0.webp" alt="foto">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Polaroid con descripción</h3>
+                            <p>Fotos estilo polaroid con textos</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Polaroid con imán</h3>
-                        <p>Recuerdos magnéticos personalizados</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="https://tienda.fotografiamardelplata.com.ar/wp-content/uploads/2023/05/Fotos-tienda-204.jpg" alt="foto">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Polaroid con imán</h3>
+                            <p>Recuerdos magnéticos personalizados</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Calendarios</h3>
-                        <p>Calendarios con tus fotos favoritas</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="https://cms.cloudinary.vpsvc.com/images/c_scale,dpr_auto,f_auto,w_450/legacy_dam/es-es/S001980707/NPIB-61635-Calendars-Subcategory-Page-2026-Bestsellers-Wall-Calendar-Product-Tile-001" alt="foto">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Calendarios</h3>
+                            <p>Calendarios con tus fotos favoritas</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Tote bags</h3>
-                        <p>Bolsas de tela personalizadas</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="https://dcdn-us.mitiendanube.com/stores/001/259/093/products/whatsapp-image-2025-03-15-at-16-49-21-9e8cf92d43c7e1265f17420696578159-1024-1024.webp" alt="foto">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Tote bags</h3>
+                            <p>Bolsas de tela personalizadas</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Fotos para vasos</h3>
-                        <p>Diseños para personalizar vasos</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="https://i.pinimg.com/236x/6b/d6/82/6bd682abdf17e9fbdb906997d26ad56f.jpg" alt="foto">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Fotos para vasos</h3>
+                            <p>Diseños para personalizar vasos</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Llaveros</h3>
-                        <p>Llaveros únicos con tus diseños</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Llaveros</h3>
+                            <p>Llaveros únicos con tus diseños</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Strip con descripción</h3>
-                        <p>Tiras de fotos con textos personalizados</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Strip con descripción</h3>
+                            <p>Tiras de fotos con textos personalizados</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Álbumes</h3>
-                        <p>Álbumes de fotos personalizados</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Álbumes</h3>
+                            <p>Álbumes de fotos personalizados</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Vinos personalizados</h3>
-                        <p>Etiquetas de vino con tu diseño</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Vinos personalizados</h3>
+                            <p>Etiquetas de vino con tu diseño</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>             
+            </section>
+
+            <section id="celulares" class="seccion">
+                <h1>CELULARES</h1>
+                <div class="seccion-grilla">
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Fundas silicone case</h3>
+                            <p>Fundas suaves y resistentes</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Fundas magsafe</h3>
+                            <p>Compatibles con carga magnética</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Fundas transparentes</h3>
+                            <p>Protección sin ocultar tu celular</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Filminas</h3>
+                            <p>Protectores adhesivos decorativos</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Filminas + fundas</h3>
+                            <p>Combo de protección completa</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Cargador portátil magsafe</h3>
+                            <p>Batería externa magnética</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Vidrios templado</h3>
+                            <p>Protección de pantalla premium</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Soporte sopapa</h3>
+                            <p>Soporte adhesivo multiuso</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Protector de cámara</h3>
+                            <p>Cuida las lentes de tu celular</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Sección: Celulares -->
-            <section id="celulares" class="category-section">
-                <h2>CELULARES</h2>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <h3>Fundas silicone case</h3>
-                        <p>Fundas suaves y resistentes</p>
+            <section id="recuerdos" class="seccion">
+                <h1>RECUERDOS</h1>
+                <div class="seccion-grilla">
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Polaroid</h3>
+                            <p>Fotos estilo instantánea</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Fundas magsafe</h3>
-                        <p>Compatibles con carga magnética</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Mini polaroid</h3>
+                            <p>Versión compacta de fotos polaroid</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Fundas transparentes</h3>
-                        <p>Protección sin ocultar tu celular</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Standard</h3>
+                            <p>Fotos en tamaño clásico</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Filminas</h3>
-                        <p>Protectores adhesivos decorativos</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Maxi foto</h3>
+                            <p>Fotos en tamaño grande</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Filminas + fundas</h3>
-                        <p>Combo de protección completa</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Foto cuadro</h3>
+                            <p>Fotos listas para enmarcar</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Cargador portátil magsafe</h3>
-                        <p>Batería externa magnética</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>QR / Frases</h3>
+                            <p>Fotos con códigos QR o mensajes</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Vidrios templado</h3>
-                        <p>Protección de pantalla premium</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Polamusic</h3>
+                            <p>Fotos con código de canción</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Soporte sopapa</h3>
-                        <p>Soporte adhesivo multiuso</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>Protector de cámara</h3>
-                        <p>Cuida las lentes de tu celular</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Sección: Recuerdos -->
-            <section id="recuerdos" class="category-section">
-                <h2>RECUERDOS</h2>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <h3>Polaroid</h3>
-                        <p>Fotos estilo instantánea</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>Mini polaroid</h3>
-                        <p>Versión compacta de fotos polaroid</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>Standard</h3>
-                        <p>Fotos en tamaño clásico</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>Maxi foto</h3>
-                        <p>Fotos en tamaño grande</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>Foto cuadro</h3>
-                        <p>Fotos listas para enmarcar</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>QR / Frases</h3>
-                        <p>Fotos con códigos QR o mensajes</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>Polamusic</h3>
-                        <p>Fotos con código de canción</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>Cuadros 20x25</h3>
-                        <p>Cuadros decorativos personalizados</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Sección: Adhesivos -->
-            <section id="adhesivos" class="category-section">
-                <h2>ADHESIVOS</h2>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <h3>Stickers de papel</h3>
-                        <p>Calcomanías clásicas personalizadas</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>Holográficos</h3>
-                        <p>Stickers con efecto holográfico</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>Transparentes</h3>
-                        <p>Adhesivos con fondo transparente</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>Vinilos</h3>
-                        <p>Adhesivos resistentes para exterior</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>DTV UV</h3>
-                        <p>Transferencias con protección UV</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>DTF TEXTIL</h3>
-                        <p>Transferencias para telas</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Cuadros 20x25</h3>
+                            <p>Cuadros decorativos personalizados</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Sección: Emprendedores -->
-            <section id="emprendedores" class="category-section">
-                <h2>EMPRENDEDORES</h2>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <h3>Combo emprendedor</h3>
-                        <p>Kit completo para tu negocio</p>
+            <section id="adhesivos" class="seccion">
+                <h1>ADHESIVOS</h1>
+                <div class="seccion-grilla">
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Stickers de papel</h3>
+                            <p>Calcomanías clásicas personalizadas</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Tarjetas personalizadas</h3>
-                        <p>Tarjetas de presentación profesionales</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Holograficos</h3>
+                            <p>Stickers con efecto holográfico</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Logos</h3>
-                        <p>Diseño de identidad de marca</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Transparentes</h3>
+                            <p>Adhesivos con fondo transparente</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Bolsas de friselina con logo</h3>
-                        <p>Bolsas ecológicas para tu marca</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Vinilos</h3>
+                            <p>Adhesivos resistentes para exterior</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>DTV UV</h3>
+                            <p>Transferencias con protección UV</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>DTF TEXTIL</h3>
+                            <p>Transferencias para telas</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Sección: Tote Bags -->
-            <section id="tote-bags" class="category-section">
-                <h2>TOTE BAGS</h2>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <h3>Tote bag big</h3>
-                        <p>Bolsa grande para el día a día</p>
+            <section id="emprendedores" class="seccion">
+                <h1>EMPRENDEDORES</h1>
+                <div class="seccion-grilla">
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Combo emprendedor</h3>
+                            <p>Kit completo para tu negocio</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Tote bag A5</h3>
-                        <p>Tamaño compacto y práctico</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Tarjetas personalizadas</h3>
+                            <p>Tarjetas de presentación profesionales</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Tote wine</h3>
-                        <p>Bolsa especial para botellas</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Logos</h3>
+                            <p>Diseño de identidad de marca</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Bolsa souvenir</h3>
-                        <p>Perfecta para regalos y recuerdos</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Bolsas de friselina con logo</h3>
+                            <p>Bolsas ecológicas para tu marca</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Sección: Organiza tus ideas -->
-            <section id="organiza-ideas" class="category-section">
-                <h2>ORGANIZA TUS IDEAS</h2>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <h3>Agendas</h3>
-                        <p>Planificadores personalizados</p>
+            <section id="tote-bags" class="seccion">
+                <h1>TOTE BAGS</h1>
+                <div class="seccion-grilla">
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Tote bag big</h3>
+                            <p>Bolsa grande para el día a día</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Libretas</h3>
-                        <p>Cuadernos para tus notas</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Tote bag A5</h3>
+                            <p>Tamaño compacto y práctico</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <h3>Cuadernos</h3>
-                        <p>Variedad de tamaños y estilos</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Tote wine</h3>
+                            <p>Bolsa especial para botellas</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Bolsa souvenir</h3>
+                            <p>Perfecta para regalos y recuerdos</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="organiza-ideas" class="seccion">
+                <h1>ORGANIZA TUS IDEAS</h1>
+                                <div class="seccion-grilla">
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Agendas</h3>
+                            <p>Planificadores personalizados</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Libretas</h3>
+                            <p>Cuadernos para tus notas</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tarjeta">
+                        <div class="tarjeta-foto">
+                            <img src="../assets/.png" alt="foto" width="50" height="100">
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Cuadernos</h3>
+                            <p>Variedad de tamaños y estilos</p>
+                            <div class="tarjeta-extras">
+                                <p class="Precio">$ Precio</p>
+                                <button class="Mas-Informacion">Mas Informacion</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -421,97 +812,84 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Menú hamburguesa móvil
-        const togglerBtn = document.querySelector('.navbar-toggler');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileOverlay = document.getElementById('mobileOverlay');
-        const closeBtn = document.querySelector('.mobile-close-btn');
-
-        function openMenu() {
-            mobileMenu.classList.add('show');
-            mobileOverlay.classList.add('show');
-            togglerBtn.setAttribute('aria-expanded', 'true');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeMenu() {
-            mobileMenu.classList.remove('show');
-            mobileOverlay.classList.remove('show');
-            togglerBtn.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        }
-
-        togglerBtn.addEventListener('click', function() {
-            if (mobileMenu.classList.contains('show')) {
-                closeMenu();
-            } else {
-                openMenu();
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburgerBtn = document.querySelector('.boton-hamburgueza');
+            const mobileMenu = document.querySelector('.menu-hamburgueza');
+            const closeBtn = document.querySelector('.boton-cerrar');
+            const overlay = document.querySelector('.menu-hamburgueza-overlay');
+        
+            function openMenu(){
+                mobileMenu.classList.add('show');
+                overlay.classList.add('show');
             }
-        });
-
-        closeBtn.addEventListener('click', closeMenu);
-        mobileOverlay.addEventListener('click', closeMenu);
-
-        // Manejo de submenús en el menú móvil
-        const mobileMenuItems = document.querySelectorAll('.mobile-menu-links > li');
-
-        mobileMenuItems.forEach(item => {
-            const link = item.querySelector('a');
-            const submenu = item.querySelector('ul');
-
-            if (submenu) {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-
-                    // Cerrar otros elementos del mismo nivel
-                    mobileMenuItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('active');
-                        }
-                    });
-
-                    // Toggle del elemento actual
-                    item.classList.toggle('active');
+        
+            function closeMenu(){
+                mobileMenu.classList.remove('show');
+                overlay.classList.remove('show');
+            }
+        
+            hamburgerBtn?.addEventListener('click', openMenu);
+            closeBtn?.addEventListener('click', closeMenu);
+            overlay?.addEventListener('click', closeMenu);
+        
+            const submenuButtons = document.querySelectorAll('.boton-submenus');
+        
+            submenuButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const parent = button.closest('.submenus-hamburgueza');
+                    parent.classList.toggle('active');
+                });
+            });
+        
+            const categoryLinks = document.querySelectorAll('.categorias-links');
+            const sections = document.querySelectorAll('.seccion');
+        
+            function updateActiveLink() {
+                let currentSection = '';
+            
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                
+                    if (window.scrollY >= sectionTop - 200) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+            
+                categoryLinks.forEach(link => {
+                    link.classList.remove('active');
+                
+                    if (link.getAttribute('href') === `#${currentSection}`) {
+                        link.classList.add('active');
+                    }
                 });
             }
+        
+            window.addEventListener('scroll', updateActiveLink);
+            window.addEventListener('load', updateActiveLink);
+        
+            categoryLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                
+                    e.preventDefault();
+                
+                    const target = document.querySelector(this.getAttribute('href'));
+                
+                    if(target){
+                        window.scrollTo({
+                            top: target.offsetTop - 180,
+                            behavior: 'smooth'
+                        });
+                    
+                        history.pushState(null, null, this.getAttribute('href'));
+                    }
+                
+                    closeMenu();
+                });
+            });
+        
         });
-
-        // Cerrar menú al hacer clic en enlaces sin submenú (enlaces de las categorías)
-        const categoryLinks = document.querySelectorAll('.mobile-menu-links ul li a');
-        categoryLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                closeMenu();
-            });
-        });
-
-        // Activar enlace del menú lateral según la sección visible
-        const navLinks = document.querySelectorAll('.sidebar-nav .nav-link');
-        const sections = document.querySelectorAll('.category-section');
-
-        function updateActiveLink() {
-            let currentSection = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= (sectionTop - 200)) {
-                    currentSection = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + currentSection) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', updateActiveLink);
-        updateActiveLink();
-    </script>
+        </script>
 </body>
 </html>
