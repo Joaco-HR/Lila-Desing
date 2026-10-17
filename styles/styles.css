@@ -19,14 +19,15 @@ header {
 
 .lineas-decorativas {
     height: 0.1rem;
-    margin: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     background: #1cffecf3;
 }
 
 nav {
     max-width: 1150px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
 .nav-contenido {
@@ -279,7 +280,7 @@ nav {
 
 .carousel-item {
     height: 680px;
-}
+}   
 
 .carousel-item img {
     width: 100%;
@@ -507,7 +508,7 @@ nav {
 }
 
 .seccion-grilla {
-    align-self: center;
+    margin: 0 auto 4rem auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
@@ -588,6 +589,227 @@ nav {
     color: #005e86;
     background-color: #ffffff;
     box-shadow: 0 6px 12px #242424;
+}
+
+.carteles {
+    max-width: 1100px;
+    margin: 2rem auto 4rem auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.carteles-info {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.cartel-texto {
+    flex: 1;
+}
+
+.cartel-texto h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #51a3b0;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #1cffecf3;
+}
+
+.cartel-texto p {
+    font-family: "Quintessential", serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 0.8rem;
+}
+
+.cartel-texto button {
+    margin-top: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #008cc8f3;
+    box-shadow: 0 6px 12px #c0c0c0;
+    transition: all 0.3s ease;
+}
+
+.cartel-texto button:hover {
+    transform: translateY(-5px);
+    background-color: #00d9ff;
+}
+
+.cartel-texto button a {
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: "Quintessential", serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+    transition: color 0.3s ease;
+}
+
+.cartel-texto button:hover a {
+    color: #000000;
+}
+
+/* ===== SOBRE MI - HERO BANNER ===== */
+.sobre-hero {
+    background: linear-gradient(135deg, #e8f7f9 0%, #d0eef2 50%, #b8e4ea 100%);
+    text-align: center;
+    padding: 4rem 2rem 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.sobre-hero::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(81, 163, 176, 0.12);
+}
+
+.sobre-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    right: -20px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(28, 255, 236, 0.08);
+}
+
+.sobre-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.sobre-hero-tag {
+    display: inline-block;
+    background: rgba(81, 163, 176, 0.15);
+    color: #51a3b0;
+    font-family: "Quintessential", serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    border: 1px solid rgba(81, 163, 176, 0.3);
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.sobre-hero-titulo {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #51a3b0;
+    margin: 0 0 0.5rem 0;
+}
+
+.sobre-hero-sub {
+    font-family: "Quintessential", serif;
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+}
+
+.sobre-hero-ondas {
+    margin-top: 1rem;
+    line-height: 0;
+}
+
+.sobre-hero-ondas svg {
+    width: 100%;
+    height: 60px;
+}
+
+/* ===== BADGE EN CARTEL TEXTO ===== */
+.cartel-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, rgba(0,200,183,0.12), rgba(81,163,176,0.12));
+    color: #51a3b0;
+    font-family: "Quintessential", serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: 1px dashed #51a3b0;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+/* ===== TIRA DE VALORES ===== */
+.valores-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    background: linear-gradient(90deg, #f0fbfc, #e4f6f8, #f0fbfc);
+    border-radius: 16px;
+    padding: 1.8rem 2.5rem;
+    border: 1px solid rgba(81, 163, 176, 0.2);
+    box-shadow: 0 4px 20px rgba(81, 163, 176, 0.08);
+    flex-wrap: wrap;
+}
+
+.valor-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.valor-icono {
+    font-size: 1.4rem;
+}
+
+.valor-texto {
+    font-family: "Quintessential", serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #3d8a96;
+    white-space: nowrap;
+}
+
+.valor-sep {
+    color: #b5d9de;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/* ===== SEPARADOR DECORATIVO ===== */
+.separador-decorativo {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    padding: 0 2rem;
+}
+
+.sep-linea {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #1cffecf3, transparent);
+}
+
+.sep-icono {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+/* ===== FAQ ACCORDION ===== */
+.faq-accordion {
+    max-width: 1000px;
+    margin: 0 auto 4rem auto;
+    padding: 0 2rem;
 }
 
 .contactos{
@@ -951,6 +1173,40 @@ footer {
         padding: 0.5rem 1.2rem;
     }
     
+    
+    .carteles-info {
+        flex-direction: column;
+        padding: 1.8rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .carteles-info:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .carteles-foto img {
+        width: 100%;
+        height: auto;
+        max-height: 260px;
+        object-fit: cover;
+    }
+    
+    .sobre-hero-titulo {
+        font-size: 2.5rem;
+    }
+    
+    .valores-strip {
+        gap: 1rem;
+        padding: 1.2rem;
+    }
+    
+    .valor-sep {
+        display: none;
+    }
+    
+    .valor-texto {
+        font-size: 0.88rem;
+    }
     .footer-info{
         display: block;
     }
